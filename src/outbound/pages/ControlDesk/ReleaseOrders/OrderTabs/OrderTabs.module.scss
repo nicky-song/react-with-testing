@@ -1,0 +1,44 @@
+.order-release{
+  gap: var(--st-unit-6);
+
+  &__content {
+    gap: var(--st-unit-10);
+  
+    [class*='_table__wrapper'] {
+      overflow: visible;
+    }
+  
+    table {
+      &[class*='__details'] {
+        thead {
+          tr {
+            th {
+              padding: 0 var(--st-unit-2);
+  
+              &:first-child {
+                padding: 0 var(--st-unit-4);
+              }
+            }
+          }
+        }
+  
+        tbody {
+          tr {
+            td {
+              padding: var(--st-unit-4) var(--st-unit-2);
+  
+              &:first-child {
+                padding: var(--st-unit-4) var(--st-unit-4);
+              }
+  
+              label {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

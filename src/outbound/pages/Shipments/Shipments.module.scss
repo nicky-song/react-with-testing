@@ -1,0 +1,39 @@
+.shipments {
+  &__board-wrapper {
+    overflow: hidden;
+  }
+
+  &__dropdown
+  {
+    width: calc(var(--st-unit-26) * 3);
+  }
+
+  @mixin cardheight {
+    height: calc(var(--st-unit-25) * 8);
+    overflow-x: hidden;
+  }
+
+  &_not-started {
+    border-top: var(--st-unit-1) solid var(--st-color-gray-400);
+    background-color: var(--contrast-pale-gray, var(--st-color-gray-100));
+    @include cardheight;
+  }
+
+  &_in-progress {
+    border-top: var(--st-unit-1) solid var(--additional-yellow-800);
+    background-color: var(--additional-yellow-200);
+    @include cardheight;
+  }
+
+  &_dock-lane {
+    border-top: var(--st-unit-1) solid var(--additional-blue-700);
+    background-color: var(--additional-blue-200);
+    @include cardheight;
+  }
+
+  &_shipped {
+    border-top: var(--st-unit-1) solid var(--additional-green-700);
+    background-color: var(--additional-green-200);
+    @include cardheight;
+  }
+}

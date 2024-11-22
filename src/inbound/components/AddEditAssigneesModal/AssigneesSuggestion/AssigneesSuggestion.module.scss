@@ -1,0 +1,57 @@
+.assignees-suggestion {
+    padding: var(--st-unit-2) 0;
+
+    &__container {
+        max-height: calc(var(--st-unit-25) * 4);
+        overflow-x: auto;
+    }
+
+    &__section {
+        gap: var(--st-unit-1);
+
+        &__title {
+            padding: var(--st-unit-3) var(--st-unit-4) 0  var(--st-unit-4);
+        }
+    }
+
+    &__item {
+        padding: var(--st-unit-3) var(--st-unit-4);
+        cursor: pointer;
+        min-height: var(--st-unit-14);
+        width: 100%;
+        align-content: center;
+        
+        &__checkbox {
+            width: 100%;
+            padding-left: var(--st-unit-9);
+            margin-bottom: 0;
+            gap: var(--st-unit-4);
+
+            &__label {
+                width: 100%;
+
+                & > input {
+                    &:focus,
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+
+        &__badge {
+            padding: 0 var(--st-unit-1);
+            color: var(--additional-green-700);
+            background-color: var(--additional-green-300);
+
+            &--text {
+                line-height: var(--st-unit-5);
+            }
+        }
+
+        &--active,
+        &:hover {
+            background-color: var(--st-color-gray-100);
+        }
+    }
+}

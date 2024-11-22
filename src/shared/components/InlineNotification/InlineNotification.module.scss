@@ -1,0 +1,14 @@
+.inline-notification {
+  & > div:first-child {
+    border: none;
+    box-shadow: var(--st-shadow-4dp);
+  }
+
+  &__text-container {
+    margin-top: calc(var(--st-unit-3) * -1);
+  }
+
+  &__bold-text {
+    font-weight: var(--st-font-weight-medium);
+  }
+}

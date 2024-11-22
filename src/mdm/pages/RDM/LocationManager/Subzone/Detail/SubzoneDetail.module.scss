@@ -1,0 +1,17 @@
+.subzone-detail {
+  &__form-field {
+    &-section {
+      margin-top: var(--st-unit-6);
+    }
+
+    &-label--required::after {
+      content: "*";
+      color: var(--st-color-error);
+    }
+  }
+
+  &__banner-section {
+    background: var(--st-color-gray-100);
+    padding: var(--st-unit-6);
+  }
+}

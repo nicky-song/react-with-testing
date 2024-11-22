@@ -1,0 +1,40 @@
+@mixin clear-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.root {
+  border: none;
+  box-shadow: var(--st-shadow-2dp);
+  background-color: var(--st-color-white);
+
+  & > div > div {
+    padding: 0;
+  }
+
+  // TODO: higher order specificity
+  & > button {
+    height: var(--st-unit-14);
+    padding: 0 var(--st-unit-4);
+
+    & > span {
+      @include clear-margin-padding;
+    }
+
+    & > span > span {
+      margin: 0 var(--st-unit-2) 0 0;
+    }
+
+    & > span > span > span {
+      display: flex;
+      align-items: center;
+      @include clear-margin-padding;
+
+      & > span > span > div {
+        font-size: var(--st-unit-4);
+        font-weight: 400;
+        line-height: var(--st-unit-6);
+      }
+    }
+  }
+}

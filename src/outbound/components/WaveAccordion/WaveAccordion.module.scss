@@ -1,0 +1,33 @@
+@mixin clear-margin-padding {
+    margin: 0;
+    padding: 0;
+}
+
+.wave-accordion {
+    div[class*="_--variant-list"]:first-of-type{
+        border-top: none;
+    }
+
+    &__checkbox{
+        margin-bottom: 0;
+    }
+
+    & > div > button {
+        height: auto;
+        padding: var(--st-unit-4);
+        background-color: var(--st-color-white);
+
+        & > span > span:last-child {
+            display: none;
+          }
+    }
+
+    &__left{
+        gap: var(--st-unit-4);
+    }
+
+    &__right{
+        gap: var(--st-unit-4);
+    }
+}
+

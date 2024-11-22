@@ -1,0 +1,47 @@
+.master-card {
+  gap: var(--st-unit-4);
+  position: relative;
+
+  /* Dark/Primary-Orange/000 */
+  box-shadow: var(--st-shadow-2dp);
+
+  &__top-section {
+    gap: var(--st-unit-4);
+  }
+
+  &__title-wrapper {
+    gap: var(--st-unit-2);
+  }
+
+  &__title {
+    line-height: var(--st-unit-8);
+  }
+
+  &__tags-wrapper {
+    gap: var(--st-unit-2);
+  }
+
+  &__status-badge {
+    height: var(--st-unit-9);
+  }
+
+  &__bottom-section {
+    gap: var(--st-unit-2);
+  }
+
+  &__detail-item {
+    gap: var(--st-unit-4);
+
+    &__text {
+      line-height: calc(var(--st-unit-6) - 2px);
+    }
+  }
+
+  &__statistics-wrapper {
+    gap: var(--st-unit-2);
+  }
+
+  &__lines {
+    line-height: calc(var(--st-unit-6) - 2px);
+  }
+}

@@ -1,0 +1,56 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+@use '@shared/styles/variables.module.scss' as variables;
+
+.order-details-drawer {
+  &__master-header {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    &.no-border {
+      border: none;
+    }
+  }
+
+  &__left-column,
+  &__right-column {
+    height: 100%;
+    overflow: auto;
+
+    &-details {
+      overflow: auto;
+    }
+  }
+
+  &__left-column {
+    background-color: var(--st-color-white);
+    border-right: 1px solid var(--st-color-gray-300);
+  }
+
+  &__details {
+    border-bottom: 1px solid var(--st-color-gray-300);
+  }
+
+  &__comments {
+    padding: var(--st-unit-1) var(--st-unit-2) var(--st-unit-1) var(--st-unit-3);
+  }
+
+  &__search-bar {
+    @include mixins.search-bar-full-height;
+    @include mixins.search-bar-no-narrow-search;
+
+    width: calc(var(--st-unit-25) * 4),
+  }
+
+  &__export {
+    border: 1px solid var(--st-color-primary);
+
+    &:hover {
+      background-color: var(--st-color-gray-200);
+    }
+  }
+
+  &__content {
+    overflow-y: hidden;
+  }
+}

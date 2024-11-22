@@ -1,0 +1,47 @@
+@use '@shared/styles/variables.module.scss' as variables;
+
+.tag {
+  width: fit-content;
+
+  &--commodity {
+    padding: 0 calc(var(--st-unit-1) + 0.5px);
+  }
+
+  &__icon {
+    width: var(--st-unit-4);
+    height: var(--st-unit-4);
+  }
+
+  &__text {
+    display: none;
+
+    @media #{variables.$breakpoint-l} {
+      display: block;
+    }
+
+    &--order {
+      color: var(--st-color-gray-600);
+    }
+  }
+
+  &--order {
+    background-color: var(--st-color-gray-50);
+    border: 1px solid var(--st-color-gray-600);
+
+    &:hover {
+      background-color: var(--st-color-gray-50);
+    }
+  }
+
+  &--hazmat {
+    background-color: var(--st-color-warning);
+
+    &:hover {
+      background-color: var(--st-color-warning);
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--st-color-focus);
+  }
+}

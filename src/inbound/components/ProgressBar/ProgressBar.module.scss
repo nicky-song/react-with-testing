@@ -1,0 +1,15 @@
+.root {
+  width: 100%;
+
+  &__progress-container {
+    & > div {
+      font-family: var(--st-font-family-body);
+      font-weight: 400;
+    }
+  }
+
+  &__progress {
+    height: var(--st-unit-2);
+    width: calc(100% - var( --st-unit-30));  
+  }
+}

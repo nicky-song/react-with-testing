@@ -1,0 +1,21 @@
+.modal {
+  & > div[class*='_content'] {
+    padding: 0;
+  }
+
+  &__header {
+    position: sticky;
+    border-bottom: 1px solid var(--st-color-gray-300);
+  }
+
+  &__body {
+    background-color: var(--st-color-gray-100);
+    height: calc((var(--st-unit-29) * 5) + 8px);
+    overflow: auto;
+  }
+
+  &__footer {
+    gap: var(--st-unit-4);
+    position: sticky;
+  }
+}

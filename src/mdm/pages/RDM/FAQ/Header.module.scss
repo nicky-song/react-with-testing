@@ -1,0 +1,18 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+.faq-header {
+  [class*=combined-tabs__badge] {
+    display: none;
+  }
+}
+
+.search-bar {
+  @include mixins.search-bar-full-height;
+  @include mixins.search-bar-no-narrow-search;
+
+  & div[class*='__skeleton'] {
+    & div[class*='_--nowrap'] {
+      display: block;
+    }
+  }
+}

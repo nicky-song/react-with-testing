@@ -1,0 +1,36 @@
+.in-page-navigation {
+  &__menu {
+    margin-bottom: var(--st-unit-4);
+  }
+
+  &-item {
+    padding: var(--st-unit-2) var(--st-unit-6);
+
+    &--active {
+      border-left: calc(var(--st-unit-1) + 1px) solid var(--st-color-accent);
+    }
+  }
+}
+
+.faq {
+  &__header {
+    &-text {
+      margin-bottom: var(--st-unit-8);
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--st-unit-2);
+  }
+
+  &__description {
+    margin-bottom: var(--st-unit-4);
+
+    &-link {
+      &-text {
+        display: inline;
+      }
+    }
+  }
+}
+

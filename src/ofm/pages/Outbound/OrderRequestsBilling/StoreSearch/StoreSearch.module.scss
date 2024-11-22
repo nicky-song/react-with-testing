@@ -1,0 +1,19 @@
+.stores {
+  &__container {
+    overflow-y: scroll;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(var(--st-unit-30) * 4), 1fr));
+    margin-bottom: var(--st-unit-15);
+  }
+
+  &__item {
+    list-style-type: none;
+
+    & div[class*='_card_'] {
+      border-radius: 0;
+    }
+  }
+}

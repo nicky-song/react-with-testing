@@ -1,0 +1,92 @@
+@use '@shared/styles/variables.module.scss' as variables;
+
+.profile-caret-icon {
+  border-radius: 50%;
+  transition: background-color var(--st-duration-fast) ease-in-out;
+
+  &:hover {
+    background-color: var(--st-color-gray-600);
+  }
+
+  &__wrapper {
+    margin-left: calc(var(--st-unit-2) * -1);
+  }
+}
+
+.profile {
+  &__content {
+    padding: calc(var(--st-unit-2) + 1px) 0;
+
+    // Removes dropdown content border
+    div {
+      border: none;
+    }
+  }
+
+  &__button {
+    background: none;
+    height: fit-content;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    // Remove default chevron
+    > div:last-child {
+      display: none;
+    }
+  }
+
+  &__button-view {
+    display: flex;
+    gap: var(--st-unit-4);
+    padding: 0;
+    margin: 0;
+    background: none;
+    text-align: left;
+    align-items: center;
+    flex-direction: row;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__user-info {
+    display: block;
+
+    @media #{variables.$breakpoint-s} {
+      display: none;
+    }
+  }
+
+  &__name {
+    text-align: right;
+    line-height: var(--st-font-size-150);
+  }
+
+  &__title {
+    line-height: var(--st-font-size-137);
+  }
+
+  &__chevron {
+    transition: transform var(--st-duration-fast) ease-in-out;
+    transform: rotate(270deg);
+
+    &--expanded {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:focus-within {
+    .profile-caret-icon {
+      &__wrapper {
+        border-radius: var(--st-unit-1);
+        outline: 2px solid var(--st-color-focus);
+      }
+    }
+  }
+
+  &__icon-description {
+    font-weight: var(--st-font-weight-bold);
+  }
+}

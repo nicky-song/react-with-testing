@@ -1,0 +1,13 @@
+.avatar-group {
+  &__item {
+    &__wrapper {
+      border-right: calc(var(--st-unit-1) - 1px) solid var(--st-color-white);
+      border-radius: 50%;
+      margin-left: calc(var(--st-unit-1) - var(--st-unit-2));
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }    
+  }
+}

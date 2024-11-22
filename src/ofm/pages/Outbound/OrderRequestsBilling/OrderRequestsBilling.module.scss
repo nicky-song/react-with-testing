@@ -1,0 +1,16 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+.search-bar {
+  @include mixins.search-bar-full-height;
+  @include mixins.search-bar-no-narrow-search;
+
+  &__skeleton {
+    max-width: calc(var(--st-unit-25) * 4);
+    min-width: var(--st-unit-13);
+  }
+}
+
+// TODO: Temporary until change made on STARC side to take full height of container
+*[id^='__starc-38'] {
+  height: calc(var(--st-unit-4-5) * 3);
+}

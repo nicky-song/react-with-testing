@@ -1,0 +1,29 @@
+.assign-task-drawer{ 
+    background-color: var(--st-color-white);
+
+    div[class*=drawer__content]{ 
+      justify-content: start;
+      padding: 0;
+    }
+
+    &__profile__icon{
+        background-color: var(--st-color-yellow-100);
+    }
+
+    &__username{
+      color:var(--st-color-gray-700);
+      margin-bottom: var(--st-unit-2);
+   }
+}
+
+.available-tasks{
+    height: calc(var(--st-unit-14) + 2px);
+    border-bottom: 1px solid var(--st-color-gray-300);
+    padding-top: 0;
+
+    &__search{
+        background-color: var(--st-color-gray-200);
+        padding: var(--st-unit-2) var(--st-unit-4);
+        border-radius: var(--st-unit-1);
+    } 
+}

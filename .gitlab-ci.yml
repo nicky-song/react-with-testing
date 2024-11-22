@@ -1,0 +1,11 @@
+include:
+    project: 'it/path-to-production/shared-pipelines'
+    ref: 'RAPID-akamai-temp'
+    file: 'pipeline-templates/akamai/react.gitlab-ci.yml'
+
+variables:
+    EMAIL_TO: 'd.jimenez@autozone.com'
+    FILES_TO_DEPLOY: dist
+    NODE_VERSION: '20'
+    BUILD_TOOL: yarn
+    APPNAME: wms

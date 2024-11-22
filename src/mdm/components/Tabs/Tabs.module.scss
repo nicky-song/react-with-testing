@@ -1,0 +1,51 @@
+.tabs {
+  padding: var(--st-unit-4) var(--st-unit-6);
+  cursor: pointer;
+
+  &__container {
+    & button[class*='_selected_'][class*='_tab_'] {
+      &::after {
+        content: none;
+      }
+    }
+
+    & div[class*='_panel_'] {
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & button {
+      & > div {
+        &.tabs {
+          &__container {
+            &--active {
+              &::before {
+                content: '';
+                height: 2px;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                position: absolute;
+                background-color: var(--st-color-accent);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > div > div:first-child {
+      border-bottom: 1px solid var(--st-color-gray-300);
+    }
+  }
+
+  &__badge {
+    border-radius: var(--st-unit-25);
+    background-color: var(--st-color-500);
+
+    &--selected {
+      background-color: var(--st-color-accent);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.delivery-card {
+  &__container {
+    gap: var(--st-unit-4);
+    border-bottom: 1px solid var(--st-color-gray-300);
+    margin: var(--st-unit-4);
+    margin-bottom: 0;
+
+    &--option {
+      gap: var(--st-unit-4);
+      border-bottom: none;
+      margin: var(--st-unit-4);
+    }
+  }
+
+  &__subtitle {
+    letter-spacing: 1.6px;
+  }
+
+  &__card {
+    min-width: calc((var(--st-unit-22) + 1px) * 4);
+    border-radius: 0;
+    align-self: stretch;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    margin-bottom: var(--st-unit-6);
+  }
+}

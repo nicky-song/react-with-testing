@@ -1,0 +1,85 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+%tooltip-close-button {
+  width: var(--st-unit-5);
+  height: var(--st-unit-5);
+}
+
+.store-details {
+  &__container {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+  }
+
+  &__details-container {
+    flex: auto;
+    overflow-y: hidden;
+  }
+
+  &__title {
+    align-items: flex-start;
+    flex: none;
+  }
+
+  &__loading-container {
+    border-bottom: 1px solid var(--st-color-gray-300);
+  }
+
+  &__information {
+    background-color: var(--st-color-white);
+    border-right: 1px solid var(--st-color-gray-300);
+  }
+
+  &__invoice-history {
+    background-color: var(--st-color-gray-100);
+    display: flex;
+    flex-flow: column nowrap;
+
+    &-header {
+      flex: none;
+    }
+
+    &-details {
+      flex: auto;
+    }
+  }
+
+  &__information,
+  &__invoice-history {
+    height: 100%;
+    overflow: auto;
+  }
+
+  &__invoice-title {
+    margin-bottom: var(--st-unit-4);
+  }
+
+  &__details {
+    border-bottom: 1px solid var(--st-color-gray-300);
+  }
+
+  &__comments {
+    padding: var(--st-unit-1) var(--st-unit-2) var(--st-unit-1) var(--st-unit-3);
+  }
+
+  &__search-bar {
+    @include mixins.search-bar-full-height;
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__tooltip {
+    margin-left: var(--st-unit-1);
+
+    & div:nth-child(2) > button {
+      @extend %tooltip-close-button;
+
+      & svg {
+        @extend %tooltip-close-button;
+      }
+    }
+  }
+}

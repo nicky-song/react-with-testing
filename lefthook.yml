@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    stylelint:
+      glob: '*.{css,scss,sass}'
+      run: yarn stylelint --fix {staged_files} && git add {staged_files}
+    lint:
+      glob: '*.{mjs,js,ts,tsx}'
+      run: yarn lint --fix {staged_files} && git add {staged_files}
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      run: yarn commitlint --edit

@@ -1,0 +1,9 @@
+.footer {
+  height: var(--st-unit-22);
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--st-color-white);
+  border-top: 1px solid var(--st-color-gray-300);
+  column-gap: var(--st-unit-4);
+}

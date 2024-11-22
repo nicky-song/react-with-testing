@@ -1,0 +1,18 @@
+.will-call-suggestion {
+    padding: var(--st-unit-2) calc(var(--st-unit-4-5) + 1.2px);
+    cursor: pointer;
+
+    &__container {
+        gap: var(--st-unit-2);
+    }
+
+    &--active,
+    &:hover {
+        background-color: var(--st-color-gray-100);
+    }
+
+    &--disabled {
+        opacity: 0.5;
+    }
+
+}

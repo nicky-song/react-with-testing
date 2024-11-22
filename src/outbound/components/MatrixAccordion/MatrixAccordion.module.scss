@@ -1,0 +1,113 @@
+@mixin clear-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.matrix-accordion {
+  @include clear-margin-padding;
+
+  background-color: var(--st-color-white);
+  margin-bottom: var(--st-unit-2);
+
+  &[class*="_--variant-list"]:first-of-type{
+    border: none;
+    border-right: 1px solid transparent;
+  }
+
+  & div > div[class*="_content-inner"] { 
+      @include clear-margin-padding; 
+  }
+
+  & > button { 
+    & > span {
+      @include clear-margin-padding;
+    }
+
+    & > span > span {
+      @include clear-margin-padding;
+    }
+
+    & > span > span:last-child {
+      display: none;
+    }
+  }
+}
+
+.line-height20 {
+  line-height: var(--st-unit-5);
+  white-space: nowrap;
+}
+
+.line-height22 {
+  line-height: calc(var(--st-unit-5) + 2px);
+  white-space: nowrap;
+}
+
+.line-height24 {
+  line-height: calc(var(--st-unit-6));
+  white-space: nowrap;
+}
+
+.matrix {
+  &__location {
+    width: calc((var(--st-unit-22) * 2) - 5px);
+    margin: 0;
+  }
+
+  &__tiles {
+    border-left: 1px solid var(--st-color-gray-300);
+    flex-wrap: nowrap;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  &__subzones {
+    border-top: 1px solid var(--st-color-gray-300);
+  }
+}
+
+.cell {
+  border-radius: var(--st-unit-1);
+  border: 1px solid var(--st-color-gray-400);
+
+  &--un-assigned {
+    background: var(--st-color-gray-50);
+  }
+
+  &--not-started {
+    background: var(--st-color-red-200);
+    border: 1px solid transparent;
+  }
+
+  &--in-progress {
+    background: var(--st-color-yellow-100);
+    border: 1px solid transparent;
+  }
+
+  &--complete {
+    background: var(--st-color-green-300);
+    border: 1px solid transparent;
+  }
+
+  &--empty {
+    background: var(--st-color-gray-400);
+    border: 1px solid transparent;
+  }
+
+  &--error {
+    border: 2px solid var(--st-color-red-200);
+    background: var(--st-color-gray-50);
+  }
+}
+
+.matrix-header {
+  border-right: 1px solid var(--st-color-gray-300);
+  border-bottom: 1px solid var(--st-color-gray-300);
+  background: var(--st-color-gray-50);
+  margin-bottom: 0;
+
+  &__collapse {
+    display: none;
+  }
+}

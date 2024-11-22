@@ -1,0 +1,6 @@
+.empty-state {
+  & > div {
+    justify-content: center;
+    background-color: var(--st-color-gray-100);
+  }
+}

@@ -1,0 +1,22 @@
+.quantity-badge {
+  border-radius: 100px;
+
+    &__text {
+      color: white;
+      line-height: var(--st-unit-5);
+      letter-spacing: calc(var(--st-unit-3) / 10);
+      font-weight: 500;
+    }
+  
+    &--active {
+      background-color: var(--st-color-orange-300);
+    }
+
+    &--selected {
+        background-color:black;
+      }
+
+      &--default {
+        background-color: var(--st-color-gray-500)
+      }
+}

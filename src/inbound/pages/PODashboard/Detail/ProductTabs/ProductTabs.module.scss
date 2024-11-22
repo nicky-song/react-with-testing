@@ -1,0 +1,19 @@
+.product-tabs {
+  & div[role='tablist'] {
+    padding: 0 var(--st-unit-6);
+    border-bottom: 1px solid var(--st-color-gray-300);
+  }
+
+  &__tab-item {
+    padding: var(--st-unit-4) var(--st-unit-6);
+    cursor: pointer;
+  }
+
+  &__badge {
+    background-color: var(--st-color-500);
+
+    &--selected {
+      background-color: var(--st-color-accent);
+    }
+  }
+}

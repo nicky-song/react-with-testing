@@ -1,0 +1,14 @@
+.heading {
+  font-size: var(--st-font-size-125);
+  margin-bottom: var(--st-unit-6);
+}
+
+.orders-list {
+  margin-bottom: var(--st-unit-10);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--st-unit-30) * 4), 1fr));
+
+  &__item {
+    list-style: none;
+  }
+}

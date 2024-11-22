@@ -1,0 +1,66 @@
+@mixin listbox {
+    box-shadow: var(--st-shadow-2dp);
+    max-height: calc(var(--st-unit-25) * 6);
+    overflow-y: auto;
+  
+    &::-webkit-scrollbar {
+      width: var(--st-unit-2);
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        background: var(--st-color-gray-300);
+    }
+  }
+  
+  .task-manager{
+    &_count{
+      border-radius: var(--st-unit-18);
+    }
+  
+    &_list-view{
+      @include listbox;
+  
+      background-color: var(--contrast-pale-gray, var(--st-color-gray-100));
+      border-top: var(--st-unit-1) solid var(--st-color-gray-400);
+    }
+  
+    &_active-view {
+      @include listbox;
+  
+      background-color: var(--additional-yellow-200);
+      border-top: var(--st-unit-1) solid var(--additional-yellow-800);
+    }
+  
+    &_almost-view {
+      @include listbox;
+  
+      background-color: var(--additional-blue-200);
+      border-top: var(--st-unit-1) solid var(--additional-blue-700); 
+    }
+  
+    &_shift{
+      width: calc(var(--st-unit-24) * 3);
+      
+      & div[class*='_inner-value-container']{
+        & > div::after{
+          content: '(Current)';
+          margin-left: var(--st-unit-1);
+        }
+      }
+    }
+  } 
+  
+  .shift-goal{
+        box-shadow: var(--st-shadow-4dp); 
+     }
+  
+  .assign-task-drawer{ 
+    background-color: var(--st-color-white);
+
+    div[class*=drawer__content]{ 
+      justify-content: start;
+      padding: 0;
+    }
+  }
+  
+  

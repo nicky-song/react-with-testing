@@ -1,0 +1,46 @@
+.credit-order-modal {
+  padding: var(--st-unit-2);
+
+  &__header {
+    margin-bottom: var(--st-unit-6);
+  }
+
+  &__title {
+    line-height: var(--st-font-weight-200);
+  }
+
+  &__subtitle {
+    line-height: var(--st-font-weight-150);
+  }
+
+  &__table {
+    overflow: auto;
+  }
+
+  &__icon-button.credit-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: var(--st-unit-8);
+    height: var(--st-unit-8);
+    border-radius: 100%;
+  }
+
+  &__footer {
+    margin-top: var(--st-unit-4);
+    position: relative;
+  }
+
+  &__pagination-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &__button.credit-order-button {
+    margin-right: 0;
+    width: fit-content;
+    padding: calc(var(--st-unit-3) + 1.5px) var(--st-unit-9);
+  }
+}

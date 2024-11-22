@@ -1,0 +1,12 @@
+.wave-container {
+  &__group-heading {
+    margin: 0;
+    margin-bottom: var(--st-unit-4);
+    line-height: var(--st-font-size-175);
+  }
+
+  &__card {
+    height: var(--st-unit-14);
+    border-radius: 0;
+  }
+}

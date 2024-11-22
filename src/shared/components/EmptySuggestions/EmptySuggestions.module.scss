@@ -1,0 +1,7 @@
+.empty-suggestions {
+  padding: var(--st-unit-4-5);
+
+  &__text {
+    font-size: calc(var(--st-unit-4-5) - var(--st-unit-1));
+  }
+}

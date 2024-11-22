@@ -1,0 +1,37 @@
+.top-navigation {
+  border-bottom: 1px solid var(--st-color-gray-500);
+
+  &__container {
+    flex-wrap: nowrap;
+  }
+
+  &__logo-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--st-unit-1);
+  }
+
+  &__logo.logo-item {
+    width: calc(var(--st-unit-22) * 2);
+  }
+
+  &__profile-item.profile-item-link {
+    height: fit-content;
+
+    > div {
+      padding: 0.75rem 1.2rem;
+      border: none;
+      min-height: 0;
+    }
+  }
+
+  &__profile-divider {
+    margin: 0 1.2rem;
+  }
+
+  &__button.profile-button {
+    height: var(--st-unit-13);
+    padding: calc(var(--st-unit-3) + 1.5px) var(--st-unit-9);
+    border: 1px solid var(--st-color-gray-50);
+  }
+}

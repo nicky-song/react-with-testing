@@ -1,0 +1,16 @@
+.zone-detail {
+  &__content-section {
+    margin-top: var(--st-unit-6);
+  }
+
+  &__form-field {
+    &-label--required::after {
+      content: "*";
+      color: var(--st-color-error);
+    }
+  }
+
+  &__divider {
+    margin: var(--st-unit-6) 0;
+  }
+}

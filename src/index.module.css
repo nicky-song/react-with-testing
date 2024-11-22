@@ -1,0 +1,21 @@
+:root {
+  font-family: var(--st-font-family-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility; /* stylelint-disable-line value-keyword-case */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+
+  /* Colors */
+  --additional-yellow-800: #907512;
+  --additional-yellow-300: #fff9e0;
+  --additional-yellow-200: #fffcf0;
+  --additional-blue-700: #014798;
+  --additional-blue-300: #d6e9ff;
+  --additional-blue-200: #ebf4ff;
+  --additional-green-700: #206009;
+  --additional-green-300: #e3eee0;
+  --additional-green-200: #f1f7f0;
+  --additional-red-700: #8f0909;
+  --additional-red-300: #f6e0e0;
+}

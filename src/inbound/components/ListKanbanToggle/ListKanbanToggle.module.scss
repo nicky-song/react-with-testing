@@ -1,0 +1,36 @@
+.list-kanban-toggle {  
+  background: var(--st-color-gray-100);
+
+  &__item {
+    & > button {
+      padding: calc(var(--st-unit-3) - 1px);
+
+      & > div {
+        & button[class^='_info-trigger'] {
+          &:hover {
+            background-color: transparent;
+            border-radius: 0;
+          }
+        }
+
+        & > div {
+          top: calc(var(--st-unit-5) + 1px) !important;
+    
+          button {
+            display: none;
+          }
+        }
+      }
+    }    
+
+    &.active {      
+      background: var(--st-color-gray-600); 
+      
+      svg {
+        color: var(--st-color-gray-100);
+
+        --st-icon-color: var(--st-color-gray-100);
+      }
+    }
+  }
+}

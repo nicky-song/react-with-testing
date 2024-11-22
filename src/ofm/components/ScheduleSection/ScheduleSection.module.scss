@@ -1,0 +1,26 @@
+.schedule-section {
+  gap: var(--st-unit-4);
+  border-bottom: 1px solid var(--st-color-gray-300);
+
+  &__tooltip {
+    :first-child {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    line-height: var(--st-font-size-150);
+  }
+
+  &__day {
+    line-height: var(--st-font-size-125);
+
+    // TODO: Add to mixins/variables for typography
+    letter-spacing: 0.075rem;
+  }
+
+  &__time {
+    line-height: var(--st-font-size-150);
+  }
+}

@@ -1,0 +1,86 @@
+@use '@shared/styles/variables.module.scss' as variables;
+
+.drawer {
+  width: 100%;
+  max-width: calc(100vw - (var(--st-unit-8) * 10));
+  height: 100%;
+  background-color: var(--st-color-white);
+
+  @media #{variables.$breakpoint-xm} {
+    max-width: 100%;
+  }
+
+  &__form {
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &--large {
+    max-width: 100rem;
+  }
+
+  &--medium {
+    max-width: 65rem;
+  }
+
+  &--small {
+    max-width: 37.5rem;
+  }
+
+  &__header {
+    align-self: stretch;
+    border-bottom: 1px solid var(--st-color-gray-300);
+    display: flex;
+    top: 0;
+  }
+
+  &__header,
+  &__footer {
+    position: sticky;
+    z-index: 100;
+    background-color: var(--st-color-white);
+  }
+
+  &__header-details {
+    flex: 1 0 0;
+  }
+
+  &__footer {
+    bottom: 0;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-top: 1px solid var(--st-color-gray-300);
+
+    &--hide {
+      display: none;
+    }
+  }
+
+  &__footer-left {
+    flex: 1 0 0;
+  }
+
+  &__content {
+    flex: 1 0 0;
+    align-self: stretch;
+    background: var(--st-color-gray-100);
+  }
+
+  > div {
+    height: inherit;
+    width: inherit;
+    padding: 0;
+  }
+
+  &__icon-button.drawer-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: var(--st-unit-8);
+    height: var(--st-unit-8);
+    border-radius: 100%;
+    margin-top:  var(--st-unit-4);
+  }
+}

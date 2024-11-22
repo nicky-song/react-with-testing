@@ -1,0 +1,25 @@
+.will-call-table-modal {
+  padding: var(--st-unit-2);
+
+  &__header {
+    margin-bottom: var(--st-unit-6);
+  }
+
+  &__title {
+    line-height: var(--st-font-weight-200);
+  }
+
+  &__subtitle {
+    line-height: var(--st-font-weight-150);
+  }
+
+  &__icon-button {
+    padding: var(--st-unit-1);
+    min-width: 0;
+
+    &:hover {
+      background-color: var(--st-color-gray-100);
+      border-radius: 100%;
+    }
+  }
+}

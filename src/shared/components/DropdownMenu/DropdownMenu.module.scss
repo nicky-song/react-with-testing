@@ -1,0 +1,79 @@
+.dropdown-menu {
+  &__button {
+    background-color: var(--st-color-gray-700);
+    height: fit-content;
+    width: fit-content;
+    padding: 0;
+    gap: var(--st-unit-1);
+    cursor: pointer;
+
+    // Style of dropdown chevron
+    div:last-child > span {
+      color: var(--st-color-gray-50);
+    }
+
+    // Style dropdown chevron container on button hover
+    &:hover {
+      > div:last-child {
+        border-radius: 0.125rem;
+        background: var(--st-color-gray-600);
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      > div:last-child {
+        border-radius: 0.125rem;
+        outline: 2px solid var(--st-color-focus);
+      }
+    }
+  }
+
+  &__button-text {
+    color: var(--st-color-gray-50);
+    font-size: var(--st-font-size-087);
+    font-weight: var(--st-font-weight-medium);
+    line-height: var(--st-font-size-137);
+  }
+
+  &__content {
+    background-color: var(--st-color-gray-700);
+  }
+
+  &__item.item-button {
+    color: var(--st-color-gray-50);
+    display: flex;
+    justify-content: flex-start;
+    padding: var(--st-unit-3) var(--st-unit-4-5);
+    background-color: var(--st-color-gray-600);
+    height: var(--st-unit-12);
+    width: 100%;
+
+    &:hover {
+      background-color: var(--st-color-gray-500);
+    }
+
+    &:focus,
+    :focus-visible {
+      outline: 2px solid var(--st-color-focus);
+    }
+  }
+
+  &__item-text {
+    font-size: var(--st-font-size-087);
+    font-weight: var(--st-font-weight-regular);
+    line-height: var(--st-font-size-137);
+    font-family: var(--st-font-family-body);
+  }
+
+  &__view {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 100%;
+    padding: calc(var(--st-unit-2) + 1px) 0;
+    background-color: var(--st-color-gray-600);
+    box-shadow: 0 0 0 1px var(--st-color-gray-600);
+  }
+}

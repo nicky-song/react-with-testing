@@ -1,0 +1,11 @@
+.task-manager-card{
+  &_list-item{
+    box-shadow: var(--st-shadow-4dp);
+  }
+
+  &_dot{
+    line-height: 0;
+    padding-bottom: var(--st-unit-1);
+  }
+}
+ 

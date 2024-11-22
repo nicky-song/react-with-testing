@@ -1,0 +1,48 @@
+.extended-stepper {
+  &__rows {
+    gap: var(--st-unit-2);
+  }
+
+  & label:focus-within::after {
+    bottom: calc(var(--st-unit-1) - 1.5px);
+    left: calc(var(--st-unit-3) + 1px);
+    width: calc(100% - (var(--st-unit-6) + 2px));
+  }
+
+  &__max-value {
+    line-height: var(--st-font-size-150);
+  }
+
+  &__error-text {
+    line-height: var(--st-font-size-137);
+  }
+
+  &__helper-text {
+    line-height: var(--st-font-size-125);
+  }
+
+  &--has-buttons {
+    & > button {
+      border-radius: 50%;
+
+      & > div:first-child {
+        height: 100%;
+        width: 100%;
+
+        & > div:first-child {
+          height: inherit;
+          width: inherit;
+
+          & span {
+            height: inherit;
+            width: inherit;
+          }
+        }
+      }
+
+      & circle {
+        r: 14.7;
+      }
+    }
+  }
+}

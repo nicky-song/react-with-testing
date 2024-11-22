@@ -1,0 +1,9 @@
+.priority-toggle {
+  & > input {
+    &:checked {
+      &~ span[class*="_toggle-background_"] {
+        background-color: var(--st-color-focus);
+      }
+    }
+  }
+}

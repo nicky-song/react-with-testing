@@ -1,0 +1,51 @@
+.landing {
+  &__header {
+    &-sub-title {
+      display: block;
+    }
+
+    &-dropdown-change-dc {
+      &__option {
+        padding: var(--st-unit-2);
+      }
+
+      &__button {
+        cursor: pointer;
+        background: none;
+        height: fit-content;
+        padding: 0;
+        box-shadow: none;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        // Remove default chevron
+        // Remove default chevron
+        > div:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    &-title {
+      margin-bottom: var(--st-unit-4);
+    }
+
+    &-card {
+      button {
+        width: 100%;
+      }
+
+      [class*='description'] {
+        color: var(--st-color-gray-600);
+      }
+    }
+  }
+}

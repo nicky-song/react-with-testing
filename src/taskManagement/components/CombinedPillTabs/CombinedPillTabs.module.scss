@@ -1,0 +1,35 @@
+.combined-pill-tabs{
+    &__button,
+    &__content-button{
+        height: var(--st-unit-9)!important; 
+    }
+
+    &__content-button{
+        margin-bottom: var(--st-unit-4);
+    }
+
+    &__dropdown{
+        border-radius: var(--st-radius-small);
+        width: 100%;
+        padding: 0;
+        height: unset;
+        box-shadow: none;
+        border: none; 
+    }
+
+    &__dropdown-button{
+        border-radius: 50vh;
+        line-height: var(--st-unit-5);
+        padding: 0 var(--st-unit-4);
+        height:var(--st-unit-9);
+        border:1px solid var(--st-color-primary);
+        font-weight: var(--st-font-weight-bold);
+        width: calc(var(--st-unit-22) + 2);
+    }
+
+    &__dropdown-content{
+        padding: var(--st-unit-4);
+        width: calc(var(--st-unit-25) * 2);
+        margin-top:0; 
+   }
+}

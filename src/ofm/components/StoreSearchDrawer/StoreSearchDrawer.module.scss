@@ -1,0 +1,35 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+.store-search-drawer {
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__search-bar {
+    margin: var(--st-unit-4) 0 var(--st-unit-8);
+    min-height: calc(var(--st-unit-4-5) * 3);
+
+    @include mixins.search-bar-full-height;
+    @include mixins.search-bar-no-narrow-search;
+  }
+
+  &__store-list {
+    width: 100%;
+  }
+
+  &__store-item {
+    list-style-type: none;
+    border-radius: none;
+    margin-bottom: var(--st-unit-4);
+
+    & div[class*='_card_'] {
+      border-radius: 0;
+    }
+
+    & button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,1462 @@
+{
+  "Sidenav": {
+    "Home": "Home",
+    "Favorites": "Favorites",
+    "Inbound": "Inbound",
+    "Outbound": "Outbound",
+    "Transportation": "Transportation",
+    "ReturnsRecalls": "Returns & Recalls",
+    "InventoryControl": "Inventory Control",
+    "PODashboard": "PO Dashboard",
+    "OutboundControlDesk": "Outbound Control Desk",
+    "CompletedPOs": "Completed POs",
+    "InboundTaskManager": "Inbound Task Manager",
+    "OutboundShipments": "Outbound Shipments",
+    "ControlTower": "Control Tower",
+    "OutboundTaskManager": "Outbound Task Manager",
+    "StoreOrderRequestBilling": "Store Order Request & Billing",
+    "DispatchReport": "Dispatch Report",
+    "PackingLists": "Packing Lists",
+    "InboundDiscrepancyChecks": "Inbound Discrepancy Checks",
+    "QCS": "QCS",
+    "QCSReport": "QCS Reports",
+    "SlotCreation": "Slot Creation",
+    "Components": "Components",
+    "WarehouseManagement": "Warehouse Management",
+    "ReferenceDataManager": "Reference Data Manager"
+  },
+  "Wave": "Wave",
+  "RequestBy": "Request by",
+  "Stores": "Stores",
+  "Edit": "Edit",
+  "OpeningOrders": "New Store Orders",
+  "BackupOrders": "Backup Orders",
+  "ActionRequired": "Action Required",
+  "SystemErrors": "System Errors",
+  "ProgressBar": {
+    "Title": {
+      "OrdersProcessing": "Orders Processing"
+    },
+    "Text": {
+      "Completed": "Completed"
+    }
+  },
+  "ChangeLanguage": "Change Language",
+  "OrderType": {
+    "Replenishment": "Replenishment",
+    "Opening": "New Store",
+    "Backup": "Backup",
+    "Credited": "Credited",
+    "CrossDock": "Cross Dock",
+    "WillCall": "Will Call",
+    "ReadyToRequest": "Ready to Request",
+    "ReadyToBill": "Ready to Bill",
+    "ReadyForRelease": "Ready for release",
+    "Flagged": "Flagged",
+    "SentToOutbound": "Sent to Outbound",
+    "SentToOutboundUnreleased": "Sent to Outbound"
+  },
+  "UnexpectedError": "Unexpected Error",
+  "ContactSupport": "Please contact support with log number: {{log}}",
+  "WaveStatus": {
+    "NotStarted": "Not Started",
+    "InProgress": "In Progress",
+    "OnHold": "On Hold",
+    "SentToOutbound": "Sent To Outbound",
+    "Cancelled": "Cancelled",
+    "Credited": "Credited"
+  },
+  "TotalStores": "Total Stores",
+  "OrderStatus": {
+    "NotStarted": "Not Started",
+    "OnHold": "On Hold",
+    "QuantityAnomaly": "Quantity Anomaly",
+    "ReadyToRequest": "Ready To Request",
+    "ReadyToBill": "Ready To Bill",
+    "SentToOutbound": "Sent To Outbound",
+    "SentToOutboundUnreleased": "Sent to Outbound",
+    "Cancelled": "Cancelled",
+    "Error": "Error",
+    "ErrorCsr": "Error: CSR",
+    "ErrorStore": "Error: Store",
+    "Credited": "Credited"
+  },
+  "OrderSecondaryStatus": {
+    "WillCall": "Will Call",
+    "FillIn": "Fill In"
+  },
+  "CloseBy": "Close by",
+  "Close": "Close",
+  "Empty": {
+    "Store": {
+      "Subtitle": "No Store Orders",
+      "Text": "There are currently no items that are \"{{orderType}}\"",
+      "Orders": "There are currently no store orders that are \"{{orderType}}\"",
+      "Details": {
+        "Subtitle": "No Store Found",
+        "Text": "There are currently no stores with id \"{{storeId}}\""
+      }
+    },
+    "Item": {
+      "ConnectionError": {
+        "Subtitle": "Items unavailable",
+        "Text": "Items in this order will become available once the order has been requested"
+      },
+      "RequestError": {
+        "Subtitle": "No items to show",
+        "Text": "Items in this order will become available once the order has been requested",
+        "Orders": "There was an issue while requesting the orders"
+      }
+    },
+    "Search": {
+      "Subtitle": "No Results",
+      "Text": "There are no results for \"{{value}}\"",
+      "NoSuggestions": "No results"
+    },
+    "ZoneSubzones": {
+      "Subtitle": "No Subzones Added",
+      "Text": "There are no subzones added to this zone at the moment. Start adding subzones.",
+      "NoSuggestions": "No Results"
+    },
+    "SubzoneLocations": {
+      "Subtitle": "No Locations Added",
+      "Text": "There are no locations added to this subzone at the moment. Start adding locations.",
+      "NoSuggestions": "No Results"
+    },
+    "SubzoneVehicles": {
+      "Subtitle": "No Vehicles Added",
+      "Text": "There are no vehicles added to this subzone at the moment. Start adding vehicles.",
+      "NoSuggestions": "No Results"
+    }
+  },
+  "CombinedTabs": {
+    "Orders": {
+      "Replenishment": "Replenishment",
+      "OpeningAndBackup": "New Store & Backup",
+      "CrossDock": "Cross Dock"
+    },
+    "Waves": {
+      "ReadyToRequest": "Ready to Request",
+      "Flagged": "Flagged",
+      "ReadyToBill": "Ready to Bill",
+      "SentToOutbound": "Sent to Outbound"
+    },
+    "FAQ": {
+      "General": "General",
+      "Inbound": "Inbound",
+      "Outbound": "Outbound",
+      "Transportation": "Transportation",
+      "ReturnsRecalls": "Returns & Recalls",
+      "InventoryControl": "Inventory Control"
+    },
+    "PODetails": {
+      "QuantityUnmatched": "Quantity Unmatched",
+      "QuantityMatched": "Quantity Matched"
+    }
+  },
+  "Schedule": {
+    "Delivery": "Delivery Schedule",
+    "Order": "Order Schedule",
+    "Monday": "Mon",
+    "Tuesday": "Tues",
+    "Wednesday": "Weds",
+    "Thursday": "Thurs",
+    "Friday": "Fri",
+    "Saturday": "Sat",
+    "Sunday": "Sun",
+    "Tooltip": {
+      "OrderBody": "Indicates the deadlines for billing a store's replenishment order, including the time and specific waves.",
+      "DeliveryBody": "Specifies the planned arrival time of a store's replenishment order."
+    }
+  },
+  "NumberOfOrders_one": "{{count}} Store Order",
+  "NumberOfOrders_other": "{{count}} Store Orders",
+  "Profile": {
+    "Help": "Help",
+    "Preferences": "Preferences",
+    "Logout": "Log Out",
+    "Login": "Log In"
+  },
+  "WaveContainer": {
+    "PastDue": "You have stores that are past due",
+    "Today": "Today",
+    "Upcoming": "Upcoming",
+    "FlaggedOrder_one": "{{count}} Flagged Order",
+    "FlaggedOrder_other": "{{count}} Flagged Orders"
+  },
+  "CreditOrder": {
+    "SKU": "SKU",
+    "PartNumber": "Part #",
+    "Description": "Description",
+    "Pack": "Pack",
+    "PacksReceived": "# of Packs Received",
+    "QuantityReceived": "Quantity Received",
+    "ModalTitle": "Indicate the quantity you received for each item",
+    "Items_one": "{{count}} Item",
+    "Items_other": "{{count}} Items",
+    "ReviewButton": "Review",
+    "CreditButton_one": "Credit {{count}} Item",
+    "CreditButton_other": "Credit {{count}} Items"
+  },
+  "ErrorTables": {
+    "ViewOrderDetails": "View Order Details",
+    "StoreNumber": "Store Number",
+    "ErrorStatus": "Error Status",
+    "Attempts": "Attempts",
+    "CreatedAt": "Created at",
+    "LastAttemptedAt": "Last Attempted at",
+    "StoreError": "Store Error",
+    "CSRError": "CSR Error"
+  },
+  "MasterTitle": {
+    "StoreOrderRequestsBilling": "Store Order Requests & Billing",
+    "NewWillCall": "New Will Call",
+    "FAQ": "Frequently Asked Questions",
+    "ZonesAndSubZones": "Zones & Subzones",
+    "OutboundControlDesk": "Outbound Control Desk",
+    "ReleaseOrders": "Release Orders",
+    "OrderRelease": "Order Release",
+    "OutboundShipments": "Outbound Shipments",
+    "Download": "Download",
+    "AddNew": "Add New",
+    "Favorite": "Favorite",
+    "ReferenceDataManager": "Reference Data Manager",
+    "Locations": "Locations",
+    "ConsolidationLocations": "Consolidation Locations",
+    "Vehicles": "Vehicles",
+    "SKUSubzoneMinOrMax": "SKU-Subzone Min/Max",
+    "Products": "Products",
+    "ProductMajorsAndMinors": "Product Majors & Minors",
+    "OrderTypes": "Order Types",
+    "Priorities": "Priorities",
+    "UCC128QCParameters": "UCC128 QC Parameters",
+    "UCC128Vendors": "UCC128 Vendors",
+    "AddressAppendix": "Address Appendix",
+    "ViewControlDesk": "View in Control Desk"
+  },
+  "Search": {
+    "StoreNumber": "Search by Store Number",
+    "StoreDrawer": {
+      "Title": "New Will Call",
+      "Label": "Search for the caller's store number"
+    },
+    "InvoiceNumber": "Search by Invoice #",
+    "FAQ": "Search FAQ",
+    "ZoneOrSubZone": "Search for zones or subzones",
+    "Location": "Search for locations",
+    "ConsolidationLocation": "Search for consolidation locations"
+  },
+  "Create": "Create",
+  "Download": "Download",
+  "SelectAll": "Select All",
+  "DeselectAll": "Deselect All",
+  "BillOrders_one": "Bill {{count}} Order",
+  "BillOrders_other": "Bill {{count}} Orders",
+  "RequestStores_one": "Request {{count}} Store",
+  "RequestStores_other": "Request {{count}} Stores",
+  "OrdersBilled_one": "{{count}} Order Billed",
+  "OrdersBilled_other": "{{count}} Orders Billed",
+  "OrdersRequested_one": "{{count}} Order Requested",
+  "OrdersRequested_other": "{{count}} Orders Requested",
+  "OrdersBilledSummaryOrders_one": "{{count}} Order has been completed",
+  "OrdersBilledSummaryOrders_other": "{{count}} Orders have been completed",
+  "OrdersBilledSummaryFlagged_one": "{{count}} order is still flagged",
+  "OrdersBilledSummaryFlagged_other": "{{count}} orders are still flagged",
+  "OrdersBilledSummary": "$t(OrdersBilledSummaryOrders, {\"count\": {{orders}} }) and $t(OrdersBilledSummaryFlagged, {\"count\" : {{flagged}} })",
+  "OrdersRequestedSummaryFlagged_one": "{{count}} Order has been flagged",
+  "OrdersRequestedSummaryFlagged_other": "{{count}} Orders have been flagged",
+  "OrdersRequestedSummaryReady_one": "{{count}} order is ready to bill",
+  "OrdersRequestedSummaryReady_other": "{{count}} orders are ready to bill",
+  "OrdersRequestedSummary": "$t(OrdersRequestedSummaryFlagged, {\"count\": {{flagged}} }) and $t(OrdersRequestedSummaryReady, {\"count\": {{orders}} })",
+  "OrdersFlaggedSummaryReady_one": "{{count}} order is ready to bill",
+  "OrdersFlaggedSummaryReady_other": "{{count}} orders are ready to bill",
+  "OrdersFlaggedSummaryResolved_one": "Error resolved for {{count}} order.",
+  "OrdersFlaggedSummaryResolved_other": "Error resolved for {{count}} orders.",
+  "OrdersFlagged_one": "{{count}} order is still flagged.",
+  "OrdersFlagged_other": "{{count}} orders are still flagged.",
+  "OrdersFlaggedSummary": "$t(OrdersFlaggedSummaryResolved, {\"count\": {{solved}} }) $t(OrdersFlagged, {\"count\": {{flagged}} })",
+  "StoreStatusTitle": "Store on hold end date",
+  "StoreStatusDescription": "Today is the suggested on hold end date for the store, please consider removing it.",
+  "DetailsSection": {
+    "StoreHeader": "Store Details",
+    "OrderHeader": "Order Details",
+    "Warehouse": "Warehouse",
+    "StoreNumber": "Store Number",
+    "StoreType": "Store Type",
+    "CustomerNumber": "Customer Number",
+    "PhoneNumber": "Phone Number",
+    "Address": "Address",
+    "Type": "Type",
+    "Lines": "Lines",
+    "Pieces": "Pieces",
+    "OrderHistory": "Order History",
+    "NewWillCall": "New Will Call",
+    "PutStoreOnHold": "Put Store on Hold",
+    "RemoveStoreFromHold": "Remove Hold on Store",
+    "StoreName": "Store {{store}}",
+    "AveragePieces": "Average Number of Pieces QTD",
+    "AverageLines": "Average Number of Lines QTD",
+    "Heading": "Heading",
+    "Credited": "Credited",
+    "ShipCD": "Ship CD"
+  },
+  "CommentDetails": {
+    "ShowOlderComments": "Show older comments",
+    "HideOlderComments": "Hide older comments",
+    "NewComment": "Add a new comment...",
+    "CommentActivityHeader": "Activity"
+  },
+  "InlineNotification": {
+    "SKU": "SKU",
+    "Today": "Today",
+    "Yesterday": "Yesterday",
+    "HoldOrderDetails": {
+      "Title": "This store is on hold",
+      "Text": "This store’s parking lot is temporarily unavailable. No orders for this store can be requested or billed at this time."
+    },
+    "HoldPODetails": {
+      "Title": "This PO is on hold",
+      "Text": "You may not take any actions on this PO till the hold is removed."
+    },
+    "HoldStoreDetails": {
+      "Title": "This store is on hold",
+      "Text": "Store was put on hold because parking lot is temporarily unavailable. Suggested hold removal on {{ date }}. No orders for this store can be requested or billed at this time.",
+      "TextNoDate": "Store was put on hold because parking lot is temporarily unavailable. No orders for this store can be requested or billed at this time."
+    },
+    "QuantityAnomaly": {
+      "Title": "Quantity is higher than normal",
+      "Text": "This store’s requested {{ requestedPieces }} pieces for ",
+      "SecondaryText": ", {{ percentageDifference }}% higher than its historical rolling average of {{ averagePieces }} pieces"
+    },
+    "StoreError": {
+      "Title": "Store Connect Failed",
+      "Text": "Failed to connect to the store to pull the SO file from /user/sms/todc. The last attempt was made at {{ attemptDay }} at {{ attemptHour }}. The system has made {{ tries }} attempts to connect and will try again in 5 minutes. Call STS to troubleshoot the store network."
+    },
+    "CSRError": {
+      "Title": "CSR Request Connect Failed",
+      "Text": "Failed to connect to CSR to send DCR file. The last attempt was made at {{ attemptDay }} at {{ attemptHour }}. The system has made {{ tries }} attempts to connect and will try again in 5 minutes. Call STS to troubleshoot the store network."
+    }
+  },
+  "WillCall": {
+    "Search": "Search for SKU, Part # or UPC",
+    "Item": {
+      "SKU": "SKU",
+      "PartNumber": "Part #",
+      "StatusType": {
+        "New": "New",
+        "Discontinued": "Discontinued",
+        "Disabled": "Disabled",
+        "Clearance": "Clearance",
+        "SellThrough": "Sell Through"
+      },
+      "PrimaryDC": "{{dc}} - Primary",
+      "Status": "Status",
+      "Description": "Description",
+      "Pack": "Pack",
+      "NumberOfPacks": "# of Packs",
+      "Quantity": "Quantity",
+      "DCSource": "DC Source",
+      "DCName": "DC {{warehouseId}}"
+    },
+    "DeliveryMethod": {
+      "CrossDock": "Cross dock to primary DC",
+      "RoShiftToday": "RO - Pull Shift Today",
+      "RoShiftXDays": "RO - Pull Shift in X Days",
+      "Fedex": "Fedex Express Shipment"
+    }
+  },
+  "OrderDetails": {
+    "Title": "Order Details",
+    "Stats": {
+      "RONumber": {
+        "Title": "RO Number"
+      },
+      "InvoiceNumber": {
+        "Title": "Invoice Number",
+        "NotAvailable": "Not available until billed"
+      },
+      "StoreNumber": {
+        "Title": "Store Number",
+        "LinkText": "View Store Details"
+      },
+      "Wave": {
+        "Title": "Wave",
+        "InternationalTitle": "Order Time"
+      },
+      "RequestDate": {
+        "Title": "Request by"
+      },
+      "OpeningOrderNumber": "New Store Order Number",
+      "BackupOrderNumber": "Backup Order Number",
+      "DCSource": "DC Source",
+      "AmountCredited": "Amount Credited"
+    },
+    "ShipCD": "Ship CD",
+    "Items": "Items",
+    "Export": "Export",
+    "RequestOrder": "Request Order",
+    "BillOrder": "Bill Order",
+    "DeleteOrder": "Delete Order",
+    "BackToStore": "Back to store {{storeId}}",
+    "Type": "Type",
+    "Pieces": "Pieces",
+    "Lines": "Lines",
+    "CallerName": "Caller name",
+    "Option": "Option",
+    "ArrivesBy": "Arrives by",
+    "SearchPlaceholder": "Search for SKU, Part #, or Planogram ID",
+    "NoItems": "No items to show",
+    "NoItemsText": "Items in this order will become available once the order has been requested.",
+    "Delivery": "Delivery",
+    "ContactSSC": "Contact SSC For Review",
+    "Error": "Error",
+    "SomethingHappened": "Something happened while retrieving your order",
+    "ContactSSCForReview": "New Store Order for Store {{storeId}} Is Outside Normal Range.",
+    "TodayAt": "Today {{date}}",
+    "VerifyFlaggedOrder": "Verify Flagged order",
+    "DayAtTime": "{{date}} at {{time}}",
+    "DCSource": "DC {{number}}",
+    "OriginalOrder": "Original Order",
+    "Credited": "Credited",
+    "View": "View"
+  },
+  "WillCallDrawer": {
+    "CallerName": "Caller Name",
+    "CallerStoreNumber": "Caller's Store Number",
+    "InitialsOrFullName": "Initials or Full Name",
+    "PrimaryDC": "Primary DC",
+    "PhoneNumber": "Phone Number",
+    "StoreAddress": "Store Address",
+    "ConfirmAndBill": "Confirm and Bill",
+    "ContinueToDelivery": "Continue to Delivery",
+    "Cancel": "Cancel",
+    "Back": "Back",
+    "StoreDetails": "Store Details",
+    "AddItems": "Add Items",
+    "SpecifyQuantityDC": "You must specify a quantity and DC for each item you add",
+    "NoItems": "No items added",
+    "ItemSearchBar": "Use the search bar to search for an item",
+    "ChooseDeliveryOptionDC": "Choose a delivery option for each DC",
+    "NumOfShipments_one": "You have {{count}} shipment",
+    "NumOfShipments_other": "You have {{count}} shipments",
+    "AreYouSure": "Are you sure you’d exit creating a new will call?",
+    "ChangesNotSaved": "Your changes will not be saved.",
+    "Stay": "Stay",
+    "Exit": "Exit Anyway"
+  },
+  "OutboundMatrix":{
+    "Locations": "Locations",
+    "Expand": "Expand",
+    "Collapse": "Collapse",
+    "Assigned": "{{count}} Assigned",
+    "SearchStoreOrder": "Search for a Store Order",
+    "Overview": "Overview",
+    "And": "and",
+    "TotalStoreReleased": "Total Stores Released",
+    "ShiftProgress": "Shift Progress",
+    "SortByDispatchRoutePlaceholder": "Sort By:Dispatch Route",
+    "DisplayOptions":{
+      "Label": "Display Options",
+      "GeneralInformation": "General Information",
+      "CompletedStores": "Completed Stores",
+      "WaveDetails": "Wave Details",
+      "TileInformation": "Tile Information",
+      "VehicleCode": "Vehicle Code",
+      "OrderSelector": "Order Selector",
+      "ShowTileInformation": "Show tile information on completed"
+    },
+    "OrderRelease": {
+      "Title": "Order Release",
+      "Subtitle": "Last Updated: {{date}}",
+      "LaneConfirmation": "Lane Confirmation",
+      "ShiftGoalStoresReleased": "Shift Goal: {{count}} / {{max}} Stores Released",
+      "StoreSelected_zero": "No Stores Selected",
+      "StoreSelected_one": "{{count}} Store Selected",
+      "StoreSelected_other": "{{count}} Stores Selected",
+      "SubzoneSelected_zero": "No Subzone Selected",
+      "SubzoneSelected_one": "{{count}} Subzone Selected",
+      "SubzoneSelected_other": "{{count}} Subzones Selected",
+      "ShiftGoal": "Shift Goal",
+      "DailyGoal": "Daily Goal",
+      "RunReplenishment": "Run Replen",
+      "RUNREPLENISHMENT": "RUN REPLENISHMENTS",
+      "ProceedToLaneConfirmation": "Proceed To Lane Confirmation",
+      "Release":"Release",
+      "Back":"Back",
+      "WaveReleased_one": "{{count}} store (Wave {{id}}) was successfully released",
+      "WaveReleased_other": "{{count}} stores (Wave {{id}}) were successfully released",
+      "ReplenishmentRun": "Replenishment report ({{item}} {{id}}) was ran successfully.",
+      "OrderReleased": "Orders {{orders}} were successfully released.",
+      "Subzone_one": "{{count}} Subzone",
+      "Subzone_other": "{{count}} Subzones",
+      "NumberOfStores_one": "{{count}} store",
+      "NumberOfStores_other": "{{count}} stores",
+      "Due": "Due {{date}}",
+      "Pieces": "$t(Table.Number, {\"val\": {{count}} }) pcs",
+      "ReleaseBy": "Release by: {{date}}",
+      "CloseBy": "Close By: {{date}}",
+      "Pallet_one": "$t(Table.Number, {\"val\": {{count}} }) Pallet",
+      "Pallet_other": "$t(Table.Number, {\"val\": {{count}} }) Pallets",
+      "Today": "Today",
+      "Upcoming": "Upcoming",
+      "Scheduled": "Scheduled",
+      "UnScheduled": "Unscheduled",
+      "NewStore": "New Store Orders",
+      "BackupStore": "Backup Store Orders",
+      "Store": "Store",
+      "Wave": "Wave",
+      "DC": "DC",
+      "And": "and",
+      "StoresReleased": "{{count}} / {{max}} Stores Released"
+    },
+    "OrderTabs": {
+      "Replenishment": "Replenishment",
+      "WillCallOrders": "Will-Call",
+      "NewStoreOrders": "New Store & Backup",
+      "LongTailDistribution": "Long Tail Distribution",
+      "TransferOrders": "Transfer",
+      "CrossDock": "Cross-Dock"
+    },
+    "Filters":{
+      "All": "All",
+      "Released": "Released",
+      "PartiallyReleased": "Partially Released"
+    },
+    "MenuOptions":{
+      "ViewOrderDetails": "View Order Details"
+    },
+    "Grouping":{
+      "Title": "Grouping Recommendations",
+      "Subtitle": "Group eligible LTD store orders for more efficient picking",
+      "NotificationText": "Our system detected LTD store order groupings that are recommended for certain store orders.",
+      "GroupOrders": "Group Orders",
+      "Grouped": "Grouped",
+      "OrdersGrouped": "Orders were successfully grouped."
+    },
+    "OrderDetailsDrawer": {
+      "Stats" :{
+        "RoNumber": "RO Number",
+        "InvoiceNumber": "Invoice Number",
+        "StoreNumber" : "Store Number",
+        "DispatchTime" : "Dispatch Time",
+        "DeliveryTime" : "Delivery Time"
+      },
+      "DOWNLOAD": "DOWNLOAD",
+      "RunReplenishmentDrawer": "RUN REPLENISHMENTS",
+      "ReplenishmentRunText": "Replenishment report for {{item}} {{id}} was successfully run.",
+      "WaveReleasedText": " Store {{number}} (Wave {{id}}) was successfully released"
+    }
+  },
+  "OutBoundShipments" :{
+    "ShowNotStarted":"Show Not Started",
+    "ShowShipped": "Show Shipped",
+    "SortByDispatchTime": "Sort By : Dispatch Time (Earliest)",
+    "NotStarted":"Not Started",
+    "InProgress":"In Progress",
+    "CtDockLaneClosed":"CT Dock Lane Closed",
+    "Shipped":"Shipped",
+    "Loaded": "Loaded",
+    "Hazmat": "Hazmat",
+    "Dispatch": "Dispatch {{date}}"
+  },
+  "Table": {
+    "Comments": "Comments",
+    "Number": "{{val, number}}",
+    "OrderDetails": {
+      "SKU": "SKU",
+      "PartNumber": "Part #",
+      "PlanogramId": "Planogram ID",
+      "Description": "Description",
+      "Pack": "Pack",
+      "QOH": "QOH",
+      "Quantity": "Quantity",
+      "Subzone": "Subzone",
+      "Selectors": "Selectors",
+      "QOHError": "The QOH is {{ qoh }}",
+      "CreditItems_one": "Credit {{ count }} Item",
+      "CreditItems_other": "Credit {{ count }} Items",
+      "DeleteSelectedItems_one": "Delete {{ count }} selected item",
+      "DeleteSelectedItems_other": "Delete {{ count }} selected items"
+    },
+    "StoreDetails": {
+      "InvoiceId": "Invoice #",
+      "RequestBy": "Request by",
+      "OrderType": "Order Type",
+      "Status": "Status",
+      "RequestedAt": "Requested at",
+      "BilledAt": "Billed at",
+      "Lines": "Lines",
+      "Pieces": "Pieces",
+      "Today": "Today"
+    },
+    "ItemsToBeBilled_one": "Item to be billed",
+    "ItemsToBeBilled_other": "Items to be billed",
+    "Save": "Save",
+    "EditItem": "Edit Item",
+    "DeleteItem": "Delete Item",
+    "WillCall": {
+      "QOH": "QOH:",
+      "MinPacks": "Min Packs:"
+    },
+    "WarehouseConfiguration": {
+      "DCNumber": "DC#",
+      "Address": "Address",
+      "Description": "Description",
+      "ContactNumber": "Contact #"
+    },
+    "SubzoneList": {
+      "SubzoneName": "Subzone Name",
+      "ZoneName": "Zone",
+      "Description": "Description",
+      "SubzoneType": "Subzone Type",
+      "PickRouteType": "Pick Route Type",
+      "Locations": "Locations",
+      "Vehicles": "Vehicles"
+    },
+    "ZoneList": {
+      "ZoneName": "Zone Name",
+      "MapSequence": "Map Sequence",
+      "Subzones": "Subzones",
+      "Description": "Description"
+    },
+    "OrderRelease": {
+      "StoreNumber": "Store Number",
+      "Pallets": "Pallets",
+      "Pieces": "Pieces",
+      "RouteGroup": "Route Group",
+      "DispatchTime": "Dispatch Time",
+      "Comments": "Comments",
+      "Activity":"Activity",
+      "Section": "Section",
+      "Subzone": "Subzone",
+      "Route": "Route",
+      "SKU": "SKUs",
+      "Quantity": "Quantity"
+    },
+    "LocationList": {
+      "LocationId": "Location ID",
+      "Type": "Type",
+      "LocationType": "Location Type",
+      "Stockroom": "Stockroom",
+      "SKU": "SKU",
+      "QuantityUnits": "Quantity Units",
+      "QuantityReserved": "Quantity Reserved",
+      "Minimum": "Minimum",
+      "Maximum": "Maximum",
+      "Zone": "Zone",
+      "Subzone": "Subzone"
+    },
+    "VehicleList": {
+      "VehicleId": "Vehicle ID",
+      "Type": "Type",
+      "Description": "Description",
+      "FullPallet": "Full Pallet",
+      "PartPallet": "Part Pallet",
+      "PickingAllowed": "Picking Allowed",
+      "PutawayAllowed": "Putaway Allowed"
+    },
+    "ConsolidationLocationList": {
+      "LocationId": "Location ID",
+      "LocationType": "Location Type",
+      "Zone": "Zone",
+      "Subzone": "Subzone"
+    }
+  },
+  "WillCallTableItem_one": "{{count}} Item",
+  "WillCallTableItem_other": "{{count}} Items",
+  "ReplenishmentPage": {
+    "Clear": "Clear filters",
+    "StartDate": "Start Date",
+    "EndDate": "End Date"
+  },
+  "DeliveryCard": {
+    "ViewItems": "View Items",
+    "Item_one": "{{count}} Item",
+    "Item_other": "{{count}} Items",
+    "ShippingFrom": "Shipping From",
+    "Delivery": "Delivery",
+    "ArrivesIn": "Arrives in",
+    "Day_one": "{{count}} Day",
+    "Day_other": "{{count}} Days",
+    "VerifyOutboundTiming": "Verify Outbound Timing",
+    "WhatIsIt": "What is it?",
+    "CallOutbound": "Call outbound to make sure you can still add items to the shipment",
+    "DC": "DC {{dc}}",
+    "Primary": "Primary"
+  },
+  "NewWillCall": "New Will Call",
+  "Export": "Export",
+  "ConfirmationComment": {
+    "PutOnHoldTitle": "Are you sure you’d like to put Store {{store}} on hold?",
+    "RemoveFromHoldTitle": "Are you sure you’d like to remove the hold on Store {{store}}?",
+    "ReasonPutOnHold": "Reason for hold",
+    "ReasonRemoveFromHold": "Reason for removing the hold",
+    "ReasonRequest": "Reason for requesting ahead",
+    "ReasonDelete": "Reason for deletion",
+    "Placeholder": "Start typing",
+    "DatePlaceholder": "Suggested Hold End Date",
+    "DateMessage": "This is a suggested date. You will still need to remove the hold manually.",
+    "Cancel": "Cancel",
+    "Confirm": "Confirm",
+    "PutOnHold": "Put on hold",
+    "RemoveOnHold": "Remove hold",
+    "RequestTitle": "Request ahead?",
+    "RequestDate": "This order has a request by date of {{day}}. Are you sure you’d like to request {{dayCount}} days ahead?",
+    "RequestManyDate": "These orders have a request by date of {{day}} at {{time}}. Are you sure you’d like to request {{dayCount}} days ahead?",
+    "Request": "Request",
+    "RequestOrders": "Request {{amount}} orders",
+    "DeleteOrderTitle": "Are you sure you’d like to delete this order?",
+    "DeleteMultipleOrdersTitle_one": "Are you sure you want to delete {{count}} selected item?",
+    "DeleteMultipleOrdersTitle_other": "Are you sure you want to delete {{count}} selected items?",
+    "DeleteReason": "Reason for deletion",
+    "Delete": "Delete",
+    "DeleteMultiple_one": "Delete {{count}} Selected Item",
+    "DeleteMultiple_other": "Delete {{count}} Selected Items",
+    "DeleteDescription": "This order has already been Sent to Outbound, but is still unreleased.",
+    "DeleteMultipleDescription": "These items have already been Sent to Outbound, but are still unreleased.",
+    "DeleteErrorTitle": "This order cannot be deleted",
+    "DeleteMultipleErrorTitle": "These items cannot be deleted",
+    "DeleteErrorDescription": "This order is already being released and cannot be deleted.",
+    "DeleteMultipleErrorDescription": "These items were already being released and cannot be deleted.",
+    "DeleteMultipleGenericErrorDescription": "These items are flagged and cannot be deleted.",
+    "DeleteErrorGenericErrorDescription": "This order is flagged and cannot be deleted.",
+    "GotIt": "Got It",
+    "ReleaseOrderTitle": "Are you sure you would like to release this order?" ,
+    "ReleaseOrderDescription": "Replenishment has not been run on this order. Please confirm that you would like to release this order to proceed to lane confirmation",
+    "PutPOOnHoldTitle": "Are you sure you’d like to put PO {{poId}} on hold?",
+    "RemovePOFromHoldTitle": "Are you sure you’d like to remove the hold on PO {{poId}}?",
+    "PutPOOnHoldSubTitle": "You will not be able to change the status of this PO while it is on hold."
+  },
+  "Form": {
+    "RequiredField": "This field is required",
+    "MaxCharacterAmount": "The maximum amount of characters is {{count}}",
+    "InvalidDate": "Invalid date",
+    "ValidInput": "Input must have at least three characters and not just spaces.",
+    "InputError": "Input Error",
+    "AlphaNumericError": "This field must be alphanumeric",
+    "NumericError": "This field must be numeric"
+  },
+  "DateFormat": {
+    "Short": "MM/DD/YY",
+    "Long": "MM/DD/YYYY",
+    "ShortTime": "MM/DD/YY HH:mm",
+    "ShortTimeSeconds": "MM/DD/YY HH:mm:ss",
+    "TimeHoursMinutes": "HH:mm",
+    "TimeHourMinutes": "H:mm",
+    "Time12HourMinutes": "h:mm",
+    "WeekdayLongTextWithTime": "dddd MMMM DD",
+    "SortedTitle": "dddd M/DD/YY",
+    "WaveTitle": "MMMM DD, YYYY",
+    "CreateOrder": "YYYY-MM-DD"
+  },
+  "Components": {
+    "CombinedTabs": "Combined Tabs",
+    "Modals": "Modals",
+    "Notification": "Notification",
+    "Drawer": "Drawer",
+    "ProgressBar": "Progress Bar",
+    "Tables": "Tables",
+    "Waves": "Waves",
+    "WillCallSearch": "Will Call Search Bar",
+    "MasterTitle": "Master Title",
+    "DeliveryCard": "Delivery Card"
+  },
+  "404": {
+    "Title": "Page Not Found",
+    "Description": "Sorry, we cannot find the page you are looking for.",
+    "ButtonText": "Back to Dashboard"
+  },
+  "Auth": {
+    "ErrorLogin": {
+      "Subtitle": "Please try again",
+      "Text": "An error has ocurred while authenticating",
+      "Link": "Retry"
+    },
+    "AutoZoneID": "AutoZone ID",
+    "Password": "Password",
+    "EnterYourAutoZoneID": "Enter your AutoZone ID",
+    "EnterYourPassword": "Enter your password",
+    "AutoZoneIDDoesNotExists": "AutoZone ID does not exists",
+    "PasswordIsIncorrect": "Password is incorrect"
+  },
+  "Key": {
+    "International": "international",
+    "NonInternational": "non-international"
+  },
+  "Services": {
+    "Store": "store",
+    "Stores": "stores",
+    "Wave": "wave",
+    "Waves": "waves",
+    "Summary": "order summary",
+    "Order": "order",
+    "Orders": "orders",
+    "OrderHistory": "order history",
+    "Products": "products"
+  },
+  "Success": {
+    "Action": {
+      "RequestingOrders_one": "{{count}} Item Requested",
+      "RequestingOrders_other": "{{count}} Items Requested",
+      "BillingOrders_one": "{{count}} Item Billed",
+      "BillingOrders_other": "{{count}} Items Billed",
+      "Export": "Information Exported",
+      "Activity": "Activity Submitted",
+      "StoreStatus": "Status Changed",
+      "VerifyOrder": "Item Verified",
+      "DeleteOrder": "Order Deleted",
+      "DeleteOrderProducts_one": "{{count}} Item Deleted",
+      "DeleteOrderProducts_other": "{{count}} Items Deleted",
+      "Credit": {
+        "Credited_one": "{{count}} Item Credited",
+        "Credited_other": "{{count}} Items Credited",
+        "SeeInvoice": "See Invoice"
+      },
+      "WillCall": {
+        "Title": "Will Call Created and Billed",
+        "ItemsSent_one": "{{count}} item for {{store}} has been sent to the Outbound control desk",
+        "ItemsSent_other": "{{count}} items for {{store}} have been sent to the Outbound control desk"
+      }
+    }
+  },
+  "Errors": {
+    "Page": {
+      "Title": "There was an error",
+      "Description": "Sorry, we couldn't load the page. The issue happened while getting the {{service}}, please try again later",
+      "ButtonText": "Reload the page"
+    },
+    "Drawer": {
+      "Description": "Sorry, we couldn't load the drawer. The issue happened while getting the {{service}}, please try again later",
+      "ButtonText": "Close the drawer"
+    },
+    "Search": {
+      "Description": "Sorry, we couldn't load the {{items}}, please try again later"
+    },
+    "Service": {
+      "Description": "There was an error with the {{service}} service, please try again later"
+    },
+    "Products": {
+      "Description": "There was an error loading the products, please try again later"
+    },
+    "Action": {
+      "RequestingOrders_one": "There was an issue requesting {{count}} store, please try again later",
+      "RequestingOrders_other": "There was an issue requesting {{count}} stores, please try again later",
+      "BillingOrders_one": "There was an error billing {{count}} order, please try again later",
+      "BillingOrders_other": "There was an error billing {{count}} orders, please try again later",
+      "RequestingNotification": "There was an error notifying the user about the request process, please try again later",
+      "BillingNotification": "There was an error notifying the user about the bill process, please try again later",
+      "Export": "There was an error while exporting the {{item}} information, please try again later",
+      "Activity": "There was an issue while submitting the activity, please try again later",
+      "StoreStatus": "There was an issue while changing the store status, please try again later",
+      "WillCall": "There was an issue while creating the will call, please try again later",
+      "VerifyOrder": "There was an error while verifying an order, please try again later",
+      "DeleteOrder": "There was an error while deleting an order, please try again later",
+      "DeleteOrderProducts_one": "There was an error while deleting {{count}} item, please try again later",
+      "DeleteOrderProducts_other": "There was an error while deleting {{count}} items, please try again later",
+      "CreditOrder": "There was an error while crediting an order, please try again later"
+    }
+  },
+  "InboundTaskManager":{
+    "UserStatus": {
+      "NotActive": "Not Active",
+      "Active": "Active",
+      "AlmostDone": "Almost Done"
+    },
+    "Text": {
+      "Assigned": "Assigned",
+      "NotAssigned": "Not Assigned",
+      "WorkingDepartment": {
+        "Outbound": "Working in Outbound",
+        "Inbound" : "Working in Inbound"
+      }
+    },
+    "PiecesData": "{{count}} / {{total}}"
+  },
+  "NotActiveDropDownList":{
+		"MoveToAnotherDepartment":"Move to Another Department",
+		"AssignTasks": "Assign Tasks",
+		"RemoveFromShift": "Remove from Shift"
+	},
+  "ActiveDropDownList":{
+    "AssignTasks": "Assign Tasks",
+    "MoveToAnotherDepartment": "Move to Another Department"
+   },
+  "InPageNavigationTabs": {
+    "GeneralFAQ": {
+      "IntroductionToWMS": "Introduction to WMS",
+      "RolesAndPermission": "Roles & Permissions",
+      "DistributionCentres": "Distribution Centres"
+    }
+  },
+  "FAQ": {
+    "Title": "Title",
+    "GeneralFAQ": {
+      "FAQ1": {
+        "Title": "Introduction to WMS"
+      },
+      "FAQ2": {
+        "Title": "Roles & Permissions"
+      },
+      "FAQ3": {
+        "Title": "Distribution Centres",
+        "Content1": {
+          "Title": "Who can manage a DC Information?",
+          "Description": "Only authorized users such as managers and operations admin can make edits to the warehouse information."
+        },
+        "Content2": {
+          "Title": "AutoZone DC Contact Information",
+          "Description": "Only authorized users such as managers and operations admin can make edits to the warehouse information."
+        }
+      }
+    }
+  },
+  "ListView": "List View",
+  "KanbanView": "Kanban View",
+  "InThisPage": "In This Page",
+  "Here": "here",
+  "ZoneDetails": {
+    "Title": "Zone Details",
+    "Name": "Zone Name",
+    "EnterZoneName": "Enter zone name",
+    "Description": "Description",
+    "EnterZoneDescription": "Enter zone description",
+    "TotalSubzonesInZone_one": "Subzone in this zone ({{ count }})",
+    "TotalSubzonesInZone_other": "Subzones in this zone ({{ count }})",
+    "MapSequence": {
+      "Label": "Map Sequence",
+      "Placeholder": "Enter map sequence"
+    },
+    "WarehouseInstruction": "You can only manage and create location for your active DC."
+  },
+  "SubzoneDetails": {
+    "Title": "Subzone Details",
+    "Banner": {
+      "Title": "Pack method required only for subzones used as: DOCK or PACK. Conveyor flag required for voice pick to set up conveyor subzone."
+    },
+    "ZoneName": {
+      "Label": "Zone Name",
+      "Placeholder": "Select a zone"
+    },
+    "Name": {
+      "Label": "Subzone Name",
+      "Placeholder": "Enter subzone name"
+    },
+    "Type": {
+      "Label": "Subzone Type",
+      "Placeholder": "Select subzone type"
+    },
+    "ContainerType": {
+      "Label": "Container Type",
+      "Placeholder": "Select container type"
+    },
+    "Description": {
+      "Label": "Description",
+      "Placeholder": "Enter subzone description"
+    },
+    "PickMethod": {
+      "Label": "Pick Method",
+      "Placeholder": "Select pick method"
+    },
+    "LabelSort": {
+      "Label": "Label Sort",
+      "Placeholder": "Select label sort"
+    },
+    "SkuPickClass": {
+      "Label": "SKU Pick Class",
+      "Placeholder": "Select label sort"
+    },
+    "PickDropLocation": {
+      "Label": "Pick Drop Location",
+      "Placeholder": "Enter Pick Drop Location"
+    },
+    "PutDropLocation": {
+      "Label": "Put Drop Location",
+      "Placeholder": "Enter Put Drop Location"
+    },
+    "MultiplePartsAllowedWithinLocation": {
+      "Label": "Multiple Parts Allowed within Location"
+    },
+    "Mezzanine": {
+      "Label": "Mezzanine"
+    },
+    "PackMethod": {
+      "Label": "Pack Method",
+      "Placeholder": "Select a Pack Method"
+    },
+    "ConveyorFlag": {
+      "Label": "Conveyor Flag"
+    },
+    "ItemVerify": {
+      "Label": "Item Verify"
+    },
+    "BidirectionalPick": {
+      "Label": "Bidirectional Pick"
+    },
+    "ItemDescPrompt": {
+      "Label": "Item Desc. Prompt"
+    },
+    "Stockroom": {
+      "Label": "Stockroom",
+      "Placeholder": "Enter Stockroom"
+    },
+    "PickPriority": {
+      "Label": "Pick Priority",
+      "Placeholder": "Enter Pick Priority"
+    },
+    "PutawayPriority": {
+      "Label": "Putaway Priority",
+      "Placeholder": "Enter Putaway Priority"
+    },
+    "CategoryLabel": {
+      "Label": "Category Label",
+      "Placeholder": "Enter category label"
+    },
+    "Tabs": {
+      "Location": {
+        "Title": "Locations in this subzone",
+        "Total": "Locations"
+      },
+      "Vehicle": {
+        "Title": "Vehicles in this subzone",
+        "Subtitle": "Changes to Picking and Putaway allowance will populate automatically across the system.",
+        "Total": "Vehicles"
+      }
+    },
+    "WarehouseInstruction": "You can only manage and create location for your active DC."
+  },
+  "LocationDetails": {
+    "Name": "Location Name",
+    "Title": "Location Details",
+    "ZoneName": {
+      "Label": "Zone Name",
+      "Placeholder": "Select a zone"
+    },
+    "SubzoneName": {
+      "Label": "Subzone Name",
+      "Placeholder": "Enter subzone name"
+    },
+    "Stockroom": {
+      "Label": "Stockroom",
+      "Placeholder": "Select stockroom"
+    },
+    "Location": {
+      "Label": "Location ID",
+      "Placeholder": "Enter location name"
+    },
+    "LocationType": {
+      "Label": "Location Type",
+      "Placeholder": "Select location type"
+    },
+    "CheckDigit": {
+      "Label": "Check Digit",
+      "Placeholder": "Enter Check Digit"
+    },
+    "Sku": {
+      "Label": "SKU",
+      "Placeholder": "Enter Sku"
+    },
+    "Lot": {
+      "Label": "Lot",
+      "Placeholder": "Enter Lot"
+    },
+    "QuantityUnits": {
+      "Label": "Quantity Units",
+      "Placeholder": "Enter Quantity Units"
+    },
+    "QuantityReserved": {
+      "Label": "Quantity Reserved",
+      "Placeholder": "Enter Quantity Reserved"
+    },
+    "Minimum": {
+      "Label": "Minimum",
+      "Placeholder": "Enter Minimum"
+    },
+    "Maximum": {
+      "Label": "Maximum",
+      "Placeholder": "Enter Maximum"
+    },
+    "PackSize": {
+      "Label": "Pack Size",
+      "Placeholder": "Enter Pack Size"
+    },
+    "LocationFlag": {
+      "Label": "Location Flag",
+      "Placeholder": "Enter Location Flag"
+    },
+    "LocationLock": {
+      "Label": "Location Lock"
+    },
+    "SlotFronts": {
+      "Label": "Slot Fronts",
+      "Placeholder": "Enter Slot Fronts"
+    },
+    "SlotLayers": {
+      "Label": "Slot Layers",
+      "Placeholder": "Enter Slot Layers"
+    },
+    "SlotDeeps": {
+      "Label": "Slot Deeps",
+      "Placeholder": "Enter Slot Deeps"
+    },
+    "CurrentWidth": {
+      "Label": "Current Width",
+      "Placeholder": "Enter Current Width"
+    },
+    "FullPallet": {
+      "Label": "This location is a Full Pallet",
+      "Placeholder": "Enter Full Pallet"
+    },
+    "Locked": "Locked",
+    "Unlocked": "Unlocked",
+    "WarehouseInstruction": "You can only manage and create location for your active DC.",
+    "CycleCount": {
+      "Title": "Cycle Counts",
+      "Subtitle": "Cycle counts information can’t be edited because the data is pulled from [System name].",
+      "CycleCc": {
+        "Label": "Cycle Cc",
+        "Placeholder": "Enter Cycle Cc"
+      },
+      "CycleLot": {
+        "Label": "Cycle Lot",
+        "Placeholder": "Enter Cycle Cc"
+      },
+      "CycleDate": {
+        "Label": "Cycle Date",
+        "Placeholder": "Enter Cycle Date"
+      },
+      "CycleSqty": {
+        "Label": "Cycle Sqty",
+        "Placeholder": "Enter Cycle Sqty"
+      },
+      "CycleQuantity": {
+        "Label": "Cycle Quantity",
+        "Placeholder": "Enter Cycle Quantity"
+      },
+      "CycleCost": {
+        "Label": "Cycle Cost",
+        "Placeholder": "Enter Cycle Cost"
+      },
+      "CycleUser": {
+        "Label": "Cycle User",
+        "Placeholder": "Enter Cycle User"
+      },
+      "CycleCount": {
+        "Label": "Cycle Count",
+        "Placeholder": "Enter Cycle Count"
+      },
+      "InvQuantity1": {
+        "Label": "Inv Quantity 1",
+        "Placeholder": "Enter Inv Quantity 1"
+      },
+      "InvQuantity2": {
+        "Label": "Inv Quantity 2",
+        "Placeholder": "Enter Inv Quantity 2"
+      },
+      "InvQuantity3": {
+        "Label": "Inv Quantity 3",
+        "Placeholder": "Enter Inv Quantity 3"
+      },
+      "InvQuantity4": {
+        "Label": "Inv Quantity 4",
+        "Placeholder": "Enter Inv Quantity 4"
+      }
+    },
+    "OtherOption": {
+      "Title": "Other Options",
+      "RecordType": {
+        "Label": "Record Type",
+        "Placeholder": "Enter Record Type"
+      },
+      "MaterialCode": {
+        "Label": "Material Code",
+        "Placeholder": "Enter Material Code"
+      },
+      "SlotType": {
+        "Label": "Slot Type",
+        "Placeholder": "Enter Slot Type"
+      },
+      "ReceivingDate": {
+        "Label": "Receiving Date",
+        "Placeholder": "Enter Receiving Date"
+      },
+      "ExpirationDate": {
+        "Label": "Expiration Date",
+        "Placeholder": "Enter Expiration Date"
+      },
+      "CrossReference": {
+        "Label": "Cross Reference",
+        "Placeholder": "Enter Cross Reference"
+      },
+      "FullReserve": {
+        "Label": "Use Full Reserve on Replenishment"
+      },
+      "PickingDropArea": {
+        "Label": "Picking Drop Area",
+        "Placeholder": "Enter Picking Drop Area"
+      },
+      "PutawayDropArea": {
+        "Label": "Putaway Drop Area",
+        "Placeholder": "Enter Putaway Drop Area"
+      },
+      "Volume": {
+        "Label": "Volume",
+        "Placeholder": "Enter Volume"
+      },
+      "PutawayVolume": {
+        "Label": "Putaway Volume",
+        "Placeholder": "Enter Putaway Volume"
+      }
+    }
+  },
+  "ConsolidationLocationDetails": {
+    "Name": "Consolidation Location Details",
+    "Title": "Consolidation Location",
+    "SubTitle": "Location Details",
+    "ZoneName": {
+      "Label": "Zone Name",
+      "Placeholder": "Select a zone"
+    },
+    "SubzoneName": {
+      "Label": "Subzone Name",
+      "Placeholder": "Select a subzone"
+    },
+    "ConsolidationLocationId": {
+      "Label": "Consolidation Location ID",
+      "Placeholder": "Enter consolidation loc. name"
+    },
+    "LocationType": {
+      "Label": "Location Type",
+      "Placeholder": "Select location type"
+    },
+    "Status": {
+      "Label": "Status",
+      "Placeholder": "Select status"
+    },
+    "Order": {
+      "Label": "Order"
+    },
+    "Height": {
+      "Label": "Height"
+    },
+    "Width": {
+      "Label": "Width"
+    },
+    "Depth": {
+      "Label": "Depth"
+    },
+    "DocumentPrinterLocation": {
+      "Label": "Document Printer Location",
+      "Placeholder": "Select location"
+    },
+    "LabelPrinterLocation": {
+      "Label": "Label Printer Location",
+      "Placeholder": "Select location"
+    },
+    "WarehouseInstruction": "You can only manage and create location for your active DC."
+  },
+  "TotalZones": "Total Zones: {{ count }}",
+  "TotalSubzones": "Total Subzones: {{ count }}",
+  "Zone": "Zone",
+  "Zones": "Zones",
+  "Subzone": "Subzone",
+  "Subzones": "Subzones",
+  "Favorite": "Favorite",
+  "SaveEdits": "Save Edits",
+  "Save": "Save",
+  "Cancel": "Cancel",
+  "Confirm": "Confirm",
+  "Optional": "Optional",
+  "CreateSubzone": "Create Subzone",
+  "RemoveZone": "Remove Zone",
+  "RemoveSubzone": "Remove Subzone",
+  "Duplicate": "Duplicate",
+  "ManageSubzone": "Manage Subzone",
+  "PODashboard": {
+    "Title": "PO Dashboard",
+    "Item": {
+      "ArrivalTime": "Arrival Time",
+      "Vendor": "Vendor",
+      "PO": "PO",
+      "Door": "Door",
+      "Loc": "Loc.",
+      "Lines": "Lines",
+      "Pieces": "Pieces",
+      "Commodity": "Commodity",
+      "POType": "PO Type",
+      "SKUsWithFPS": "SKUs with FPS",
+      "Users": "Users",
+      "Status": "Status"
+    },
+    "Actions": {
+      "ViewPODetails": "View PO Details",
+      "EditPODetails": "Edit PO Details",
+      "ManageTasks": "Manage Tasks",
+      "PutPOOnHold": "Put PO on Hold",
+      "RemoveAssignee": "Remove Assignee",
+      "RemoveHold": "Remove Hold",
+      "RemovePONotOnTrailer": "Remove PO (Not on Trailer)"
+    },
+    "Search": {
+      "Placeholder": "Search for Vendor Name or PO#",
+      "DetailsPlaceholder": "Search for SKU, Part # or Location",
+      "ResultsFor": "Results for \"{{search}}\"",
+      "Results": "{{count}} Results"
+    },
+    "Stats": {
+      "Hours_one": "{{count}} hr",
+      "Hours_other": "{{count}} hrs",
+      "HoursLeft_one": "{{count}} Hour Left",
+      "HoursLeft_other": "{{count}} Hours Left",
+      "Receivers_one": "{{count}} Receiver",
+      "Receivers_other": "{{count}} Receivers",
+      "Shift": "{{shift}} Shift",
+      "Percentage": "{{percentage}}%",
+      "TotalRemaining": "Total Remaining",
+      "RegularPOsRemaining": "Regular POs Remaining",
+      "DSDPOsRemaining": "DSD POs Remaining",
+      "LTDPOsRemaining": "LTD POs Remaining",
+      "Received": "Received",
+      "PiecesFitInFPS": "Pieces Fit in FPS",
+      "SKUsWithFPS": "SKUs with FPS",
+      "ReceivingLaborHoursRemaining": "Receiving Labor Hours Remaining"
+    },
+    "AddPO" : {
+      "SelectPOType": "Select PO Type",
+      "EnterPONumber": "Enter PO Number",
+      "EnterVendorName": "Enter Vendor Name",
+      "EnterTrailerId": "Enter Trailer ID",
+      "EnterTrailerNumber": "Enter Trailer Number",
+      "SelectLocationType": "Select Location Type",
+      "EnterGateNumber": "Enter Gate Number"
+    },
+    "RemovePO" : {
+      "Title": "Are you sure you’d like to remove this PO?",
+      "SubTitle": "Enter your AutoZone ID and password to confirm the removal of this PO. You can still search the PO number in the system.",
+      "Reason": "Reason for removing PO",
+      "ActionText": "Remove PO"
+    },
+    "Assignees": {
+      "Title": "Assignees",
+      "AddAssignee": "Add Assignee",
+      "EditAssignee": "Edit Assignee",
+      "SearchPlaceholder": "Search for an AutoZoner name or ID",
+      "Selected": "Selected",
+      "Suggested": "Suggested",
+      "AllAutoZoners": "All AutoZoners",
+      "NoAssignee": "No AutoZoner assigned to this purchase order. Select recommended available AutoZoners below or search from add assignee."
+    },
+    "AddPurchaseOrder": "Add Purchase Order",
+    "AddAPurchaseOrder": "Add a Purchase Order",
+    "CarrierName": "Carrier Name",
+    "CommodityAndReceivingDoor": "Commodity & Receiving Door",
+    "ReceivingDoor": "Receiving Door",
+    "EditPODetails": "Edit PO Details",
+    "PODetails": "PO Details",
+    "POType": "PO Type",
+    "PONumber": "PO Number",
+    "VendorName": "Vendor Name",
+    "ArrivalTime": "Arrival Time",
+    "LocationDetails": "Location Details",
+    "Position": "Position",
+    "InYard": "In Yard",
+    "DCLocation": "DC Location",
+    "TrailerId": "Trailer Id",
+    "TrailerNumber": "Trailer Number",
+    "LocationType": "Location Type",
+    "GateNumber": "Gate Number",
+    "YardNumber": "Yard Number",
+    "DoorNumber": "Door Number",
+    "LaneNumber": "Lane Number",
+    "AisleNumber": "Aisle Number",
+    "Commodity": "Commodity",
+    "Priority": "Priority",
+    "HighPriority": "High Priority",
+    "HighPriorityPurchaseOrder": "High Priority Purchase Order",
+    "ReasonForAddingPO": "Reason for adding PO",
+    "ClearAll": "Clear All",
+    "ResetAll": "Reset All",
+    "NoSelectorsAssigned": "No Selectors Assigned",  
+    "LinesData": "{{count}} / {{total}}",
+    "LinesDataSummary": "$t(Table.Number, {\"val\": {{count}} }) / $t(Table.Number, {\"val\": {{total}} })",
+    "PicesData": "{{count}} / {{total}}",
+    "PicesDataLabel": "{{count}} / {{total}} {{label}}",
+    "PoWithNumber": "$t(PODashboard.Item.PO) {{poNumber}}",
+    "SkuWithFPSData": "{{count}} / {{total}}",
+    "ItemKey": "{{item}}-{{key}}",
+    "DoorWithName": "$t(PODashboard.Item.Door) {{door}}",
+    "Activity": "Activity",
+    "Finalize": "Finalize",
+    "SCAContactInformation": "SCA Contact Information",
+    "ProductItem" : {
+      "ProductName": "Product Name",
+      "PutLocations": "Put Locations",
+      "SKU": "SKU",
+      "PartHash": "Part #",
+      "Lines": "Lines",
+      "Pieces": "Pieces"
+    },
+    "Notification": {
+      "PutPOOnHoldSuccess": "This PO has been successfully put on hold.",
+      "RemovePOOnHoldSuccess": "The PO has been successfully removed from hold.",
+      "RemovePOSuccess": "The PO has been successfully removed."
+    }
+  },
+  "CreateLocation": "Create Location",
+  "ManageLocation": "Manage Location",
+  "RemoveLocation": "Remove Location",
+  "AddVehicle": "Add Vehicle",
+  "ManageVehicle": "Manage Vehicle",
+  "RemoveVehicle": "Remove Vehicle",
+  "ManageDetails": "Manage Details",
+  "ViewDetails": "View Details",
+  "Untitled": "[Untitled]",
+  "Change": "Change",
+  "TotalLocations": "Total Locations",
+  "TotalConsolidationLocations": "Total Consolidation Locations",
+  "TotalVehicles": "Total Vehicles",
+  "TotalProducts": "Total Products",
+  "TotalMajors": "Total Majors",
+  "TotalMinors": "Total Minors",
+  "TotalOrderTypes": "Total Order Types",
+  "TotalPriorities": "Total Priorities",
+  "TotalParameters": "Total Parameters",
+  "TotalVendors": "Total Vendors",
+  "TotalAddresses": "Total Addresses",
+  "RDMLanding": {
+    "LocationAndVehiclesManager": "Location & Vehicles Manager",
+    "ProductsManager": "Products Manager",
+    "OutboundConfiguration": "Outbound Configuration",
+    "Miscellaneous": "Miscellaneous"
+  },
+  "ShiftProgress":{
+    "ReceivedText": "You received",
+    "ReceivedPoCountTotal":"{{count}} / {{total}}",
+    "LastShiftText": "POs in the last shift, which was",
+    "PendingPO":"{{PendingPO}}",
+    "PoGoalText": "POs below your goal",
+    "NewShiftStarted":"Your new shift has started",
+    "Pos":"POs",
+    "SetShiftGoalBtn": "Set Shift Goals",
+    "NoShiftGoal": "No shift goal yet",
+    "PoTypeBreakDown":"Po Type BreakDown",
+    "POType":{
+      "RegularPo": "Regular PO",
+      "DSD": "DSD",
+      "LTD": "LTD"
+    }
+  },
+  "AllZones": "All Zones",
+  "AllLocationTypes": "All Locations Types",
+  "BulkUpdateLocation": "Bulk Update Location",
+  "Location": "Location",
+  "Add": "Add",
+  "Update": "Update",
+  "SearchDrawerPlaceholder":"Find PO Numbers, Vendors, or Replenishments",
+  "AvailableTasks":"Available Tasks",
+  "MoreOptions":"More Options",
+  "InventoryControl":"Inventory Control",
+  "Inbound":"Inbound",
+  "Outbound":"Outbound",
+  "ReturnsRecalls":"Returns & Recalls",
+  "GeneralTasks":"General Tasks"
+}

@@ -1,0 +1,11 @@
+.empty-page {
+  &__button.action-button {
+    height: var(--st-unit-13);
+    padding: calc(var(--st-unit-3) + 1.5px) var(--st-unit-9);
+    background-color: transparent;
+  }
+
+  &__description {
+    max-width: calc(var(--st-unit-30) * 4);
+  }
+}

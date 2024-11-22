@@ -1,0 +1,39 @@
+.avatar {
+  &__icon {
+    background: var(--st-color-focus);
+    
+    &__description{
+      &--small{
+        font-size: var(--st-font-size-062);
+      }
+
+      &--large{
+        font-size: var(--st-font-size-087);
+      }
+
+      &--extraLarge{
+        font-size: var(--st-font-size-100);
+      }
+    }
+
+    &__image {
+      border-radius: 50%;
+    }
+
+    &--small{
+      height: var(--st-unit-6);
+      width: var(--st-unit-6);
+    }
+
+    &--large{
+      height: var(--st-unit-8);
+      width: var(--st-unit-8);
+    }
+
+    &--extraLarge{
+      height: var(--st-unit-14);
+      width: var(--st-unit-14);
+    }
+
+  } 
+}

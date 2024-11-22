@@ -1,0 +1,19 @@
+.root {
+  border-top: none !important;
+  border-bottom: 1px solid var(--st-color-300) !important;
+  background-color: var(--st-color-white);
+
+  &__header {
+    font-size: var(--st-font-size-100);
+    font-weight: var(--st-font-weight-bold);
+    font-family: var(--st-font-family-body);
+  }
+
+  &__comment-details {
+    margin-bottom: var(--st-font-size-062);
+  }
+
+  &__link-details {
+    color: var(--st-color-gray-500);
+  }
+}

@@ -1,0 +1,423 @@
+.table {
+  gap: var(--st-unit-4);
+  height: 100%;
+
+  &__wrapper {
+    gap: var(--st-unit-12);
+    overflow: auto;
+    flex: auto;
+  }
+
+  &__link {
+    font-size: var(--st-font-size-087);
+    color: var(--st-color-gray-500);
+  }
+
+  &__description:hover {
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__button {
+    max-width: fit-content;
+    margin-bottom: var(--st-unit-4);
+
+    &-delete > div {
+      height: auto;
+    }
+  }
+
+  &__disabled {
+    & div {
+      color: var(--st-color-gray-400);
+    }
+  }
+
+  &__billed-badge {
+    border-radius: var(--st-unit-25);
+    background-color: var(--st-color-black);
+    height: calc(var(--st-unit-7) - 2px);
+  }
+
+  &__billed-badge-text {
+    margin: 1px;
+  }
+
+  // Added this classname to override with specificity the STARC button styles
+  &__menu-button.menu-button {
+    background-color: transparent;
+    padding-top: var(--st-unit-1);
+
+    // Needed to color the ellpisis icon for buttons on the will call modal table.
+    & span {
+      color: var(--st-color-black);
+    }
+  }
+
+  &__popover-button {
+    padding: var(--st-unit-4-5) var(--st-unit-3);
+    width: 100%;
+    cursor: pointer;
+    color: var(--st-color-gray-500);
+
+    &:hover {
+      background-color: var(--st-color-gray-100);
+      color: var(--st-color-gray-500);
+    }
+  }
+
+  &__row {
+    &--clickable {
+      cursor: pointer;
+    }
+  }
+
+  &__error {
+    background-color: var(--st-color-disabled);
+    border-collapse: separate;
+    border-spacing: 0 var(--st-unit-2);
+    padding: 0 var(--st-unit-2);
+
+    &-header {
+      height: var(--st-unit-6);
+
+      // Using this because the styles on the STARC table elements would override custom classes.
+      tr {
+        background-color: var(--st-color-disabled);
+        height: var(--st-unit-8);
+
+        // Using this because the styles on the STARC table elements would override custom classes.
+        th {
+          padding: 0 var(--st-unit-4);
+
+          // Using this to color the sorting arrows svg
+          & path {
+            fill: var(--st-color-gray-600);
+          }
+
+          // Using this to apply styles into the column titles
+          & > div {
+            color: var(--st-color-gray-600);
+            font-weight: var(--st-font-weight-medium);
+            font-size: var(--st-font-size-087);
+          }
+
+          // Using this to override STARC button styles for these specific sorting buttons
+          & > button {
+            display: flex;
+            gap: var(--st-unit-1);
+            padding: 0;
+
+            & > div {
+              color: var(--st-color-gray-600);
+              font-weight: var(--st-font-weight-medium);
+              font-size: var(--st-font-size-087);
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__details {
+    background-color: var(--st-color-gray-100);
+    border-collapse: separate;
+    border-spacing: 0 var(--st-unit-2);
+
+    &-header {
+      height: var(--st-unit-6);
+
+      // Using this because the styles on the STARC table elements would override custom classes.
+      tr {
+        background-color: var(--st-color-gray-100);
+        height: var(--st-unit-8);
+
+        // Using this because the styles on the STARC table elements would override custom classes.
+        th {
+          padding: 0 var(--st-unit-4);
+
+          // This kind of selector is needed because we want to color the sorting arrow svgs on the table columns
+          // but we don't want to color the svg inside the checkbox.
+          & button > div > span > svg > path {
+            fill: var(--st-color-gray-600);
+          }
+
+          /* stylelint-disable no-descending-specificity */
+
+          & > div {
+            color: var(--st-color-gray-600);
+            font-weight: var(--st-font-weight-medium);
+            font-size: var(--st-font-size-087);
+          }
+
+          /* stylelint-enable no-descending-specificity */
+
+          // Using this to override STARC button styles for these specific sorting buttons
+          & > button {
+            padding: 0;
+
+            & > div {
+              color: var(--st-color-gray-700);
+              font-weight: var(--st-font-weight-medium);
+              font-size: var(--st-font-size-087);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__modal {
+    border-collapse: separate;
+    border-spacing: 0 var(--st-unit-2);
+
+    &-header {
+      height: var(--st-unit-6);
+
+      // Using this because the styles on the STARC table elements would override custom classes.
+      tr {
+        background-color: var(--st-color-white);
+        height: var(--st-unit-8);
+
+        // Using this because the styles on the STARC table elements would override custom classes.
+        th {
+          padding: 0 var(--st-unit-4);
+
+          /* stylelint-disable no-descending-specificity */
+
+          // Using this to color the sorting arrows svg
+          & path {
+            fill: var(--st-color-gray-600);
+          }
+
+          // Using this to apply styles into the column titles
+          & > div {
+            color: var(--st-color-gray-600);
+            font-weight: var(--st-font-weight-medium);
+            font-size: var(--st-font-size-087);
+          }
+
+          /* stylelint-enable no-descending-specificity */
+
+          // Using this to override STARC button styles for these specific sorting buttons
+          & > button {
+            display: flex;
+            gap: var(--st-unit-1);
+            padding: 0;
+
+            & > div {
+              color: var(--st-color-gray-600);
+              font-weight: var(--st-font-weight-medium);
+              font-size: var(--st-font-size-087);
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__filled {
+    background-color: var(--st-color-white);
+    border-collapse: separate;
+    border-spacing: 0 var(--st-unit-2);
+
+    &-header {
+      height: var(--st-unit-6);
+
+      tr {
+        background-color: var(--st-color-white);
+        height: var(--st-unit-8);
+
+        th {
+          padding: 0 var(--st-unit-4);
+
+          & button > div > span > svg > path {
+            fill: var(--st-color-gray-600);
+          }
+
+          /* stylelint-disable no-descending-specificity */
+
+          & > div {
+            color: var(--st-color-gray-600);
+            font-weight: var(--st-font-weight-medium);
+            font-size: var(--st-font-size-087);
+          }
+
+          /* stylelint-enable no-descending-specificity */
+
+          & > button {
+            padding: 0;
+
+            & > div {
+              color: var(--st-color-gray-600);
+              font-weight: var(--st-font-weight-medium);
+              font-size: var(--st-font-size-087);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__simple {
+    /* stylelint-disable no-descending-specificity */
+    &-header {
+      tr {
+        background-color: var(--st-color-white-100);
+        height: max-content;
+
+        & th[class*='_header-cell']:first-child {
+          padding: var(--st-unit-2) var(--st-unit-4);
+        }
+
+        th {
+          border-top: 1px solid var(--st-color-gray-300);
+          border-bottom: 1px solid var(--st-color-gray-300);
+          padding: var(--st-unit-2) var(--st-unit-2);
+
+          & path {
+            fill: var(--st-color-gray-600);
+          }
+
+          & > div {
+            color: var(--st-color-gray-600);
+            font-weight: var(--st-font-weight-medium);
+            font-size: var(--st-font-size-087);
+          }
+        }
+
+        td {
+          padding: var(--st-unit-4) var(--st-unit-2);
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        box-shadow: none;
+        border-top: 1px solid var(--st-color-gray-300);
+        border-bottom: 1px solid var(--st-color-gray-300);
+
+        &.table {
+          &__row {
+            &--ingroup {
+              background-color: var(--st-color-gray-100);
+              border: none;
+            }
+
+            &--inlane {
+              background-color: var(--st-color-white-100);
+              border: none;
+            }
+
+            &--group-parent {
+              border-top: 1px solid var(--st-color-gray-300);
+            }
+          }
+        }
+
+        & td[class*='_cell']:first-child{
+          padding: var(--st-unit-4) var(--st-unit-4);
+        }
+
+        td {
+          padding: var(--st-unit-4) var(--st-unit-2);
+          margin: var(--st-unit-2) 0;
+
+          div[class*="_--selected"]{
+            cursor: pointer;
+          }
+
+          label {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__tbody {
+    // Using this because the styles on the STARC table elements would override custom classes.
+    tr {
+      &.table {
+        &__row {
+          &--clickable {
+            &:focus {
+              position: relative;
+              z-index: 1;
+            }
+
+            &:hover {
+              background-color: var(--st-color-gray-100);
+            }
+          }
+        }
+      }
+
+      &:nth-child(n) {
+        background-color: var(--st-color-white);
+      }
+
+      box-shadow: var(--st-shadow-2dp);
+    }
+
+    &.table {
+      &__filled-body {
+        tr {
+          box-shadow: none;
+
+          td {
+            background: var(--st-color-gray-100);
+          }
+        }
+      }
+
+      &__default-body {
+        tr {
+          box-shadow: none;
+
+          &:nth-child(2n) {
+            background-color: var(--st-color-gray-100);
+          }
+        }
+      }
+    }
+
+    /* stylelint-enable no-descending-specificity */
+  }
+
+  &__tbody-modal {
+    /* stylelint-disable no-descending-specificity */
+
+    // Using this because the styles on the STARC table elements would override custom classes.
+    tr {
+      &:nth-child(n) {
+        background-color: var(--st-color-gray-100);
+      }
+    }
+
+    /* stylelint-enable no-descending-specificity */
+  }
+
+  &__dropdown {
+    width: calc((var(--st-unit-24) * 2) + 1px);
+    height: calc(var(--st-unit-11) + 1px);
+  }
+
+  tbody {
+    & > [data-type='divider-row'] {
+      background-color: transparent;
+      box-shadow: none;
+
+      & > [data-type='divider-row-cell'] {
+        padding: var(--st-unit-6) 0;
+      }
+    }
+  }
+}

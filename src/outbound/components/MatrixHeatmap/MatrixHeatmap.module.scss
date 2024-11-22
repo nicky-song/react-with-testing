@@ -1,0 +1,10 @@
+.matrix-heatmap {
+    &__row {
+        gap: calc(var(--st-unit-2) - 2px);
+    }
+
+    &__cell {
+        width: var(--st-unit-4);
+        height: var(--st-unit-4);
+    }
+}

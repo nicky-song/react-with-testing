@@ -1,0 +1,8 @@
+.priority-tag {
+  width: fit-content;
+  background: var(--st-color-focus);  
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--st-color-focus);
+  }
+}

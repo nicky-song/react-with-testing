@@ -1,0 +1,63 @@
+.add-edit-assignee-modal {
+  & > div[class*='_content_'] {
+    padding: 0;
+  }
+
+  &[class*='_--size-auto_'] {
+    width: calc(var(--st-unit-23) * 6);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--st-unit-6);
+    
+    & * {
+      margin: 0;
+    }
+
+    & > *:first-child {
+      max-width: calc(100% - var(--st-unit-13));
+    }
+
+    &__close-button.close-icon {
+      padding: 0;
+      min-width: 0;
+      width: var(--st-unit-8);
+      height: var(--st-unit-8);
+      border-radius: 100%;
+    }
+  }
+
+  &__body {
+    height: calc(var(--st-unit-29) * 4 - var(--st-unit-1));
+    padding: 0 var(--st-unit-6) var(--st-unit-6);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &__search-bar {
+      background-color: var(--st-color-gray-100);
+    }
+
+    &__assignees_items_wrapper {
+      gap: var(--st-unit-4);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    padding: var(--st-unit-6);
+    border-top: 1px solid var(--st-color-gray-300);
+
+    &__actions{
+      gap: var(--st-unit-4);
+    }
+  }
+}
+
+.add-edit-assignee-recommended-assignee {
+  & > div[class*='_recommended-assignees__text'] {
+    padding: 0 0 var(--st-unit-6) 0;
+  }
+}

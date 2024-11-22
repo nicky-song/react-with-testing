@@ -1,0 +1,31 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+.consolidation-location-list {
+  .search-bar {
+    @include mixins.search-bar-full-height;
+    @include mixins.search-bar-no-narrow-search;
+
+    & div[class*='__skeleton'] {
+      & div[class*='_--nowrap'] {
+        display: block;
+      }
+    }
+  }
+
+  .btn {
+    &__bulk-update {
+      background: transparent;
+    }
+  }
+
+  &__table-wrapper {
+    margin-top: var(--st-unit-6);
+  }
+
+  .location {
+    &__count-wrapper {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

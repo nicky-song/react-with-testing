@@ -1,0 +1,19 @@
+/**
+ * Copyright 2023 AutoZone, Inc.
+ * Content is confidential to and proprietary information of AutoZone, Inc., its
+ * subsidiaries and affiliates.
+ */
+
+/**** BREAKPOINTS ****/
+$viewport-s: 709;
+$viewport-m: 710;
+$viewport-l: 1140;
+$viewport-xs: 1400;
+$viewport-xl: 1600;
+
+/**** MEDIA QUERIES ****/
+$breakpoint-s: 'screen and (max-width: #{$viewport-s}px)';
+$breakpoint-m: 'screen and (min-width: #{$viewport-m}px)';
+$breakpoint-l: 'screen and (min-width: #{$viewport-l}px)';
+$breakpoint-xm: 'screen and (max-width: #{$viewport-xs}px)';
+$breakpoint-xl: 'screen and (min-width: #{$viewport-xl}px)';

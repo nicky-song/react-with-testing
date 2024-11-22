@@ -1,0 +1,81 @@
+$collapsed-width: var(--st-unit-20);
+$expanded-width: calc(var(--st-unit-8) * 10);
+
+@keyframes expand {
+  from {
+    width: $collapsed-width;
+  }
+
+  to {
+    width: $expanded-width;
+  }
+}
+
+@keyframes collapse {
+  from {
+    width: $expanded-width;
+  }
+
+  to {
+    width: $collapsed-width;
+  }
+}
+
+.sidenav {
+  &__container {
+    background-color: var(--st-color-foreground);
+    position: relative;
+    width: $expanded-width;
+    height: 100%;
+    animation-name: expand;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+
+    &--collapsed {
+      width: $collapsed-width;
+      animation-name: collapse;
+      animation-duration: 0.3s;
+      animation-timing-function: ease;
+    }
+  }
+
+  &__nav-container {
+    height: 100%;
+  }
+
+  &__main-list {
+    height: inherit;
+    overflow: auto;
+    padding: var(--st-unit-6);
+    margin: 0;
+    list-style: none;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__secondary-list {
+    padding: 0;
+    margin: var(--st-unit-2) 0 0 var(--st-unit-10);
+    list-style: none;
+  }
+
+  &__expand-button {
+    border-radius: 50%;
+    background: var(--st-color-gray-200);
+    width: var(--st-unit-8);
+    height: var(--st-unit-8);
+    padding: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: var(--st-unit-2);
+    right: calc(var(--st-unit-4) * -1);
+    z-index: var(--st-z-index-fixed);
+    cursor: pointer;
+    box-shadow: var(--st-shadow-2dp);
+  }
+}

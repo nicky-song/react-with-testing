@@ -1,0 +1,29 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+  "plugins": ["stylelint-no-unsupported-browser-features"],
+  "selector-class-pattern": "^(--)?[a-zA-Z0-9-]+$",
+  "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }],
+  "color-function-notation": "legacy",
+  "alpha-value-notation": "number",
+  "declaration-block-no-redundant-longhand-properties": [
+    true,
+    {
+      "ignoreShorthands": ["inset"]
+    }
+  ],
+  "overrides": [
+    {
+      "files": ["src/**/*.scss"],
+      "rules": {
+        "plugin/no-unsupported-browser-features": [
+          true,
+          {
+            "severity": "warning",
+            "browsers": ["chrome 113", "edge 114", "firefox 117", "opera 98", "safari 16.5"],
+            "ignorePartialSupport": true
+          }
+        ]
+      }
+    }
+  ]
+}

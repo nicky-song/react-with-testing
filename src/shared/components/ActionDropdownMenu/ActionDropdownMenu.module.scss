@@ -1,0 +1,28 @@
+.action-dropdown {
+  & > div {
+    // Used important to override the inline style from STARC
+    top: var(--st-unit-6) !important;
+    right: 0;
+  }
+
+  &__button {
+    cursor: pointer;
+    background: none;
+    height: fit-content;
+    padding: 0;
+    box-shadow: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    // Remove default chevron
+    > div:last-child {
+      display: none;
+    }
+  }
+}

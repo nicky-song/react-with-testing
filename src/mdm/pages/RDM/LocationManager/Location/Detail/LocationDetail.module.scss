@@ -1,0 +1,35 @@
+.location-detail {
+  &__accordion {
+    &-wrapper {
+      &[class*="variant-list"]:first-of-type {
+        border: none;
+      }
+
+      [class*="content"][class*="--open"] {
+        height: auto !important; /* Adding !important will give this rule more precedence over inline style */
+      }
+
+      [class*="content-inner"] {
+        padding: var(--st-unit-1) var(--st-unit-3);
+      }
+
+      [class*="chevron-container"] {
+        background: transparent;
+      }
+    }
+
+    &-subtitle {
+      margin-top: var(--st-unit-4);
+    }
+  }
+
+  .form {
+    &__field-row {
+      margin-top: var(--st-unit-6);
+    }
+  }
+
+  &__date-picker {
+    width: 100%;
+  }
+}

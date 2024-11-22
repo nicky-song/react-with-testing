@@ -1,0 +1,541 @@
+/**
+ * Copyright 2023 AutoZone, Inc.
+ * Content is confidential to and proprietary information of AutoZone, Inc., its
+ * subsidiaries and affiliates.
+ */
+
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import {
+  Add,
+  Button,
+  ExclamationCircle,
+  Icon,
+  IconError,
+  Notification,
+  Text,
+  View,
+  useDebounce,
+} from '@az/starc-ui';
+
+import { useGetStoreById } from '@ofm/services/hooks/useGetStoreById';
+import {
+  addPadding,
+  formatTableOrderType,
+  splitBySeparator,
+  statusToBadgeVariant,
+} from '@ofm/utils/utils';
+import { mapStoreDetailsTableRows } from '@ofm/utils/table/tableUtils';
+import { useCreateStoreActivity } from '@ofm/services/hooks/useCreateStoreActivity';
+import { StoreDetailsSkeleton } from './StoreDetailsSkeleton';
+import { ActivityType, OrderDetailsType, ScheduleItem, StoreDetailsType } from '@ofm/types/types';
+import { StoreDetailsStatusModal } from './StoreDetailsStatusModal';
+import { useAtom } from 'jotai';
+import { warehouseAtom } from '@ofm/atoms/warehouse/warehouseAtom';
+import { useInternationalDC } from '@shared/hooks/useInternationalDC';
+import s from './StoreDetails.module.scss';
+import dayjs from 'dayjs';
+import { orderDetailsAtom } from '@ofm/atoms/orderDetails/orderDetailsAtom';
+import { OrderDetailsDrawer } from '@ofm/components/OrderDetailsDrawer/OrderDetailsDrawer';
+import { ScheduleSection } from '@ofm/components/ScheduleSection/ScheduleSection';
+import { ScheduleWeek, ScheduleDay } from '@ofm/components/ScheduleSection/ScheduleSection.types';
+import { WillCallDrawer } from '@ofm/components/WillCallDrawer/WillCallDrawer';
+import { StoreStatus, OrderStatus, OrderErrorStatus, OrderType } from '@ofm/constants/constants';
+import { WEEK_DAYS_MAP } from '@ofm/constants/dataConstants';
+import { CommentCardProps } from '@shared/components/CommentCard/CommentCard';
+import { Comments } from '@shared/components/Comments/Comments';
+import { DetailsSection } from '@shared/components/DetailsSection/DetailsSection';
+import { DetailRow } from '@shared/components/DetailsSection/DetailsSection.types';
+import { EmptyState } from '@shared/components/EmptyState/EmptyState';
+import { Footer } from '@shared/components/Footer/Footer';
+import { MasterTitle } from '@shared/components/MasterTitle/MasterTitle';
+import { WMSInlineNotification } from '@shared/components/Notification/Notification';
+import { SearchInput } from '@shared/components/SearchInput/SearchInput';
+import { Stat } from '@shared/components/Stat/Stat';
+import { StatusBadge } from '@shared/components/StatusBadge/StatusBadge';
+import { StatusVariants } from '@shared/components/StatusBadge/StatusBadge.types';
+import { SortRowsParam } from '@shared/components/Table/Table.types';
+import {
+  STORE_DETAILS_TABLE_COLUMNS,
+  TableStylingVariants,
+} from '@shared/components/Table/tableConstants';
+import {
+  DEBOUNCE_TIMER,
+  PAGE_SIZE,
+  DEFAULT_PAGE,
+  PAGE_ERRORS,
+  ID_PADDINGS,
+  NOTIFICATION_TYPES,
+} from '@shared/constants/constants';
+import { Table } from '@shared/components/Table/Table';
+import { useGetOrderHistory } from '@ofm/services/hooks/useGetOrderHistory';
+import { usePageErrorHandler } from '@shared/hooks/usePageErrorHandler';
+import { EmptyPage } from '@shared/components/EmptyPage/EmptyPage';
+import { useNotificationHandler } from '@shared/hooks/useNotificationHandler';
+import { useTranslation } from 'react-i18next';
+import { PAGE_URLS, ROUTES } from '@shared/constants/routes';
+
+export const StoreDetails = () => {
+  const { storeId, orderId, orderType } = useParams();
+  const location = useLocation();
+
+  /* Atoms */
+  const [warehouse] = useAtom(warehouseAtom);
+  const [, setOrderDetails] = useAtom(orderDetailsAtom);
+
+  /* State variables */
+  const [invalidId, setInvalidId] = useState<string>('');
+  const [invoiceId, setInvoiceId] = useState<string>('');
+  const [onHoldEndDate, setOnHoldEndDate] = useState<string | null>('');
+  const [hasEmptyList, setHasEmptyList] = useState<boolean>(false);
+  const [shouldShowWillCallDrawer, setShouldShowWillCallDrawer] = useState<boolean>(false);
+  const [showConfModalStores, setShowConfModalStores] = useState<boolean>(false);
+  const [showOrderDetailsDrawer, setShowOrderDetailsDrawer] = useState<boolean>(false);
+  const [enableOrderRequest, setEnableOrderRequest] = useState<boolean>(true);
+  const [isOnHold, setIsOnHold] = useState<boolean>(false);
+  const [comments, setComments] = useState<CommentCardProps[]>([]);
+  const [orderList, setOrderList] = useState<OrderDetailsType[]>([]);
+  const [storeData, setStoreData] = useState<StoreDetailsType>();
+
+  /* Constants */
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const debouncedValue = useDebounce(invoiceId, DEBOUNCE_TIMER);
+
+  const { isInternational, key } = useInternationalDC({ warehouse });
+
+  /* Queries */
+  const {
+    storeData: store,
+    isLoading: isStoreLoading,
+    isError: isStoreError,
+  } = useGetStoreById(storeId || '', !!storeId);
+
+  // This constant is used to control the order history endpoint calls based on the debounced value
+  const shouldEnableOrderRequest = !!storeId && enableOrderRequest;
+
+  const {
+    orderHistoryData,
+    isError: isOrderHistoryError,
+    refetch,
+  } = useGetOrderHistory(
+    {
+      warehouseId: warehouse.id,
+      storeId: storeId || '',
+      searchTerms: debouncedValue,
+    },
+    shouldEnableOrderRequest
+  );
+
+  const { mutateCreateStoreActivity } = useCreateStoreActivity();
+  const { handleNotification } = useNotificationHandler();
+
+  /* Functions */
+  const getStoreInformation = (storeData: StoreDetailsType): DetailRow[] => {
+    return [
+      { label: t('DetailsSection.Warehouse'), text: storeData.primaryDc },
+      {
+        label: t('DetailsSection.StoreNumber'),
+        text: addPadding(storeData.storeId, ID_PADDINGS.STORE),
+      },
+      { label: t('DetailsSection.StoreType'), text: storeData.storeType },
+      { label: t('DetailsSection.CustomerNumber'), text: storeData.customerNumber },
+      { label: t('DetailsSection.PhoneNumber'), text: storeData.phoneNumber },
+      {
+        label: t('DetailsSection.Address'),
+        text: splitBySeparator(
+          `${storeData.addressLine1}\n${storeData.addressLine2}\n${storeData.city}, ${storeData.state} ${storeData.postalCode}`,
+          '\n'
+        ),
+      },
+    ];
+  };
+
+  const getWeekSchedule = (schedule: ScheduleItem[]) => {
+    const scheduleWeek: ScheduleWeek = {};
+
+    schedule.forEach((weekDay) => {
+      const dayOfWeek = WEEK_DAYS_MAP[weekDay.day];
+
+      if (dayOfWeek) {
+        const scheduleDay: ScheduleDay = {
+          time: dayjs(weekDay.time).toDate(),
+          wave: weekDay.wave,
+        };
+        scheduleWeek[dayOfWeek] = scheduleDay;
+      }
+    });
+
+    return scheduleWeek;
+  };
+
+  const addActivityComment = (newComment: CommentCardProps) => {
+    if (storeData) {
+      mutateCreateStoreActivity({
+        storeId: storeData.storeId,
+        activity: {
+          message: newComment.comment,
+        },
+      });
+    }
+  };
+
+  const onSearchClear = () => {
+    setInvoiceId('');
+    setInvalidId('');
+    setHasEmptyList(false);
+  };
+
+  const handleTableRowClick = (clickedRow: SortRowsParam) => {
+    const order = orderList.find((order) => order.id === clickedRow.id);
+
+    if (order) {
+      setOrderDetails({ orderId: order.id, orderType: order.type });
+      setShowOrderDetailsDrawer(true);
+      navigate(
+        `${PAGE_URLS.STORE_DETAILS(storeId ? Number(storeId) : 0)}/${ROUTES.ORDERS}/${order.id}/${
+          order.type
+        }`
+      );
+    }
+  };
+
+  const mapAndSetComments = (data: ActivityType[]) => {
+    const mappedComments = data.map((item) => ({
+      comment: item.message,
+      username: `${item.user.toLowerCase()}`,
+      timestamp: dayjs(item.activityDate).toDate(),
+    }));
+    setComments(mappedComments);
+  };
+
+  /* Hooks */
+  const { errorMessage } = usePageErrorHandler([{ name: PAGE_ERRORS.STORE, value: isStoreError }]);
+
+  // Sets the store data when retrieving by store id
+  useEffect(() => {
+    if (store) {
+      setStoreData(store);
+
+      if (store?.status === StoreStatus.ON_HOLD) {
+        setIsOnHold(true);
+        setOnHoldEndDate(store.onHoldEndDate);
+
+        // In case the on hold date is today, show snack notification
+        if (dayjs(store.onHoldEndDate).startOf('day').isSame(dayjs().startOf('day'))) {
+          handleNotification(
+            NOTIFICATION_TYPES.SNACK,
+            t('StoreStatusTitle'),
+            t('StoreStatusDescription')
+          );
+        }
+      }
+
+      if (store?.activity) {
+        mapAndSetComments(store.activity);
+      }
+    }
+  }, [store, handleNotification, t]);
+
+  // Triggers when the on hold status changes
+  useEffect(() => {
+    if (storeData) {
+      setOnHoldEndDate(storeData?.onHoldEndDate);
+      if (storeData?.activity) mapAndSetComments(storeData.activity);
+    }
+  }, [storeData]);
+
+  //Triggers when there is a change in url
+  useEffect(() => {
+    setShowOrderDetailsDrawer(false);
+  }, [location]);
+
+  // Sets the orders for the details table
+  useEffect(() => {
+    if (orderHistoryData) {
+      setOrderList(orderHistoryData.results);
+      // Once the component renders, disable the useQuery hook so the debounce works as intended
+      setEnableOrderRequest(false);
+    }
+  }, [orderHistoryData]);
+
+  // Calls the refetch in case the search input has a valid value
+  useEffect(() => {
+    if (debouncedValue !== undefined && !isOrderHistoryError) {
+      refetch();
+    }
+  }, [debouncedValue, isOrderHistoryError, refetch]);
+
+  // Sets the filtered order list in case the request has valid orders based on invoice id
+  useEffect(() => {
+    if (orderHistoryData) {
+      const hasResults = orderHistoryData?.results.length > 0;
+      if (hasResults) {
+        setOrderList(orderHistoryData.results);
+        setHasEmptyList(false);
+      } else {
+        setOrderList([]);
+        setInvalidId(invoiceId);
+        setHasEmptyList(true);
+      }
+    }
+  }, [orderHistoryData, invoiceId]);
+
+  useEffect(() => {
+    if (orderId && orderType) {
+      setOrderDetails({
+        orderId: orderId.toString(),
+        orderType: OrderType[orderType as keyof typeof OrderType],
+      });
+      setShowOrderDetailsDrawer(true);
+    }
+  }, [orderId, orderType, setOrderDetails]);
+
+  if (isStoreLoading) {
+    return <StoreDetailsSkeleton />;
+  } else if (isStoreError) {
+    return (
+      <EmptyPage
+        title={t('Errors.Page.Title')}
+        description={t('Errors.Page.Description', {
+          service: errorMessage,
+        })}
+        buttonText={t('Errors.Page.ButtonText')}
+        onClick={() => navigate(0)}
+        icon={IconError}
+      />
+    );
+  } else if (storeData) {
+    return (
+      <View height="100%" className={s['store-details__container']}>
+        <MasterTitle
+          title={t('DetailsSection.StoreName', {
+            store: addPadding(storeData.storeId, ID_PADDINGS.STORE),
+          })}
+          className={s['store-details__title']}
+          subtitle={
+            isOnHold && (
+              <StatusBadge
+                variant={StatusVariants.READY_FOR_ACTION}
+                text={t('OrderStatus.OnHold')}
+              />
+            )
+          }
+        >
+          <View direction="row" justify="start" gap={4}>
+            {storeData?.averagePieces && (
+              <Stat
+                title={t('DetailsSection.AveragePieces')}
+                primaryText={storeData.averagePieces.toString()}
+                type="default"
+              />
+            )}
+            {storeData?.averageLinesNumber && (
+              <Stat
+                title={t('DetailsSection.AverageLines')}
+                primaryText={storeData.averageLinesNumber.toString()}
+                type="default"
+              />
+            )}
+          </View>
+        </MasterTitle>
+        <View direction="row" className={s['store-details__details-container']}>
+          <View.Item columns={{ m: 4, l: 4, xl: 3 }} className={s['store-details__information']}>
+            <View className={s['store-details__details']}>
+              <DetailsSection
+                header={t('DetailsSection.StoreHeader')}
+                rows={getStoreInformation(storeData)}
+              />
+            </View>
+            {storeData?.orderSchedule && (
+              <ScheduleSection
+                title={t('Schedule.Order')}
+                tooltipProps={{
+                  bodyText: t('Schedule.Tooltip.OrderBody'),
+                  placement: 'right',
+                }}
+                tooltipClassName={s['store-details__tooltip']}
+                schedule={getWeekSchedule(storeData.orderSchedule)}
+                displayWaves={!isInternational}
+              />
+            )}
+            {storeData?.deliverySchedule && (
+              <ScheduleSection
+                title={t('Schedule.Delivery')}
+                tooltipProps={{
+                  bodyText: t('Schedule.Tooltip.DeliveryBody'),
+                  placement: 'right',
+                }}
+                tooltipClassName={s['store-details__tooltip']}
+                schedule={getWeekSchedule(storeData.deliverySchedule)}
+                displayWaves={!isInternational}
+              />
+            )}
+            <Comments
+              isOpen={false}
+              comments={comments}
+              className={s['store-details__comments']}
+              handleCommentSubmit={addActivityComment}
+            />
+          </View.Item>
+          <View.Item grow className={s['store-details__invoice-history']}>
+            <View padding={6} className={s['store-details__invoice-history-header']}>
+              {isOnHold && (
+                <View padding={[0, 0, 8, 0]}>
+                  <Notification
+                    {...WMSInlineNotification.info}
+                    title={t('InlineNotification.HoldStoreDetails.Title')}
+                    text={
+                      onHoldEndDate
+                        ? t('InlineNotification.HoldStoreDetails.Text', {
+                            date: dayjs(onHoldEndDate).format(t('DateFormat.Long')),
+                          })
+                        : t('InlineNotification.HoldStoreDetails.TextNoDate')
+                    }
+                  />
+                </View>
+              )}
+              <StoreDetailsStatusModal
+                storeId={storeData.storeId}
+                isOpen={showConfModalStores}
+                onClose={() => setShowConfModalStores(false)}
+                isOnHold={isOnHold}
+                setIsOnHold={setIsOnHold}
+                setStoreData={setStoreData}
+              />
+              <Text weight="bold" color="primary" className={s['store-details__invoice-title']}>
+                {t('DetailsSection.OrderHistory')}
+              </Text>
+              <View direction="row" justify="end" gap={4}>
+                <View.Item grow>
+                  <SearchInput
+                    label={t('Search.InvoiceNumber')}
+                    value={invoiceId}
+                    onValueChange={setInvoiceId}
+                    onValueClear={onSearchClear}
+                    className={s['store-details__search-bar']}
+                  />
+                </View.Item>
+                <View.Item>
+                  <Button
+                    size="large"
+                    disabled={isOnHold}
+                    onClick={() => setShouldShowWillCallDrawer(true)}
+                  >
+                    <View direction="row" align="center" justify="center" gap={2}>
+                      <Icon svg={Add} color={isOnHold ? '400' : 'on-primary'} />
+                      <Text color={isOnHold ? '400' : 'on-primary'}>
+                        {t('DetailsSection.NewWillCall')}
+                      </Text>
+                    </View>
+                  </Button>
+                </View.Item>
+              </View>
+              <WillCallDrawer
+                title={t('NewWillCall')}
+                showDrawer={shouldShowWillCallDrawer}
+                setShowDrawer={setShouldShowWillCallDrawer}
+                storeId={storeData.storeId}
+              />
+            </View>
+            <View padding={[2, 6]} className={s['store-details__invoice-history-details']}>
+              {isOrderHistoryError ? (
+                <View height="100%">
+                  <EmptyState
+                    svg={ExclamationCircle}
+                    subtitle={t('Errors.Page.Title')}
+                    text={t('Errors.Search.Description', {
+                      items: t('Services.Orders'),
+                    })}
+                  />
+                </View>
+              ) : (
+                <>
+                  {hasEmptyList ? (
+                    <View height="100%">
+                      <EmptyState
+                        svg={ExclamationCircle}
+                        subtitle={t('Empty.Search.Subtitle')}
+                        text={t('Empty.Search.Text', {
+                          value: invalidId,
+                        })}
+                      />
+                    </View>
+                  ) : (
+                    <>
+                      <Table
+                        columns={STORE_DETAILS_TABLE_COLUMNS}
+                        rows={mapStoreDetailsTableRows(
+                          orderList.map((order) => {
+                            const isOrderActive =
+                              order.status !== OrderStatus.CANCELLED &&
+                              order.status !== OrderStatus.SENT_TO_OUTBOUND;
+
+                            return {
+                              orderId: order.id,
+                              invoiceId: order.invoiceNumber ?? '',
+                              requestBy: order.dueDate,
+                              orderType: formatTableOrderType(order.type),
+                              badgeText: formatTableOrderType(
+                                isOrderActive && isOnHold ? OrderErrorStatus.ON_HOLD : order.status
+                              ),
+                              badgeVariant: statusToBadgeVariant(
+                                isOrderActive && isOnHold ? OrderErrorStatus.ON_HOLD : order.status
+                              ),
+                              requestedAt: order.creationDate,
+                              billedAt: order.billedDate ?? undefined,
+                              lines: order.linesCount,
+                              pieces: order.piecesCount,
+                              hasComments: order.error.length > 0,
+                            };
+                          })
+                        )}
+                        isPaginated={true}
+                        isCheckboxDisabled={false}
+                        pageSize={PAGE_SIZE}
+                        defaultPage={DEFAULT_PAGE}
+                        isCreditItem={false}
+                        isCheckboxTable={false}
+                        styleVariant={TableStylingVariants.DETAILS}
+                        totalPages={Math.ceil(orderList.length / PAGE_SIZE)}
+                        // TODO: implement sorting from the BFF
+                        onSort={(_sorting) => {
+                          return;
+                        }}
+                        onRowAction={(clickedRow) => handleTableRowClick(clickedRow)}
+                      />
+                      <OrderDetailsDrawer
+                        drawerProps={{
+                          show: showOrderDetailsDrawer,
+                          handleClose: () => {
+                            setShowOrderDetailsDrawer(false);
+                            navigate(PAGE_URLS.STORE_DETAILS(storeId ? Number(storeId) : 0));
+                          },
+                        }}
+                        isInternational={isInternational}
+                        key={key}
+                      />
+                    </>
+                  )}
+                </>
+              )}
+            </View>
+          </View.Item>
+        </View>
+        <Footer>
+          <Button
+            variant="secondary"
+            attributes={{ style: { width: 'fit-content' } }}
+            onClick={() => setShowConfModalStores(true)}
+          >
+            <Text>
+              {isOnHold
+                ? t('DetailsSection.RemoveStoreFromHold')
+                : t('DetailsSection.PutStoreOnHold')}
+            </Text>
+          </Button>
+        </Footer>
+      </View>
+    );
+  }
+};

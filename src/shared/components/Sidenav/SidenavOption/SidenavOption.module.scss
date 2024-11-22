@@ -1,0 +1,33 @@
+.sidenav-option {
+  &__item {
+    padding: var(--st-unit-2) 0 var(--st-unit-2) 0;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &--inactive {
+      opacity: 0.33;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+
+    &--disabled {
+      opacity: 0.33;
+      cursor: not-allowed;
+    }
+  }
+
+  &__text {
+    color: var(--st-color-gray-100);
+    text-decoration: none;
+    font-size: var(--st-font-size-087);
+    font-weight: var(--st-font-weight-regular);
+    border: none;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,15 @@
+.recommended-assignees {
+  &__text {
+    line-height: var(--st-unit-6);
+  }
+
+  &__items_wrapper {
+    gap: var(--st-unit-3);
+
+    &__item {
+      &__button[class*='--variant-pill'] {
+        height: var(--st-unit-8);
+      }
+    }
+  }
+}

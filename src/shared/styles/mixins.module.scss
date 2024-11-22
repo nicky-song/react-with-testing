@@ -1,0 +1,19 @@
+@mixin search-bar-full-height {
+  height: calc(var(--st-unit-4-5) * 3);
+
+  & > div[class*='_fieldRoot_'] {
+    height: 100%;
+  }
+}
+
+@mixin search-bar-no-narrow-search {
+  & div[class*='_suggestions'] {
+    & div[class*='_--nowrap'] {
+      display: none;
+    }
+
+    & div[class*='_item_'][class*='_suggestion_'] {
+      padding: var(--st-unit-4-5);
+    }
+  }
+}

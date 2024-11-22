@@ -1,0 +1,19 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+.wave {
+  &__search-container {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__search-bar {
+    @include mixins.search-bar-full-height;
+    @include mixins.search-bar-no-narrow-search;
+
+    max-width: calc(var(--st-unit-25) * 4);
+  }
+
+  &__cta-button {
+    height: var(--st-unit-13);
+  }
+}

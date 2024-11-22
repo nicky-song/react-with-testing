@@ -1,0 +1,54 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+.zone-subzone-header {
+  .search-bar {
+    @include mixins.search-bar-full-height;
+    @include mixins.search-bar-no-narrow-search;
+
+    & div[class*='__skeleton'] {
+      & div[class*='_--nowrap'] {
+        display: block;
+      }
+    }
+  }
+
+  &__combined_tabs {
+    [class*="combined-tabs__badge"] {
+      display: none;
+    }
+  }
+
+  .zone-subzone-search {
+    margin-top: var(--st-unit-4);
+  }
+
+  .sub-title {
+    margin-top: var(--st-unit-2);
+  }
+
+  &__create-actions {
+    &__button {
+      cursor: pointer;
+      background: none;
+      height: fit-content;
+      padding: 0;
+
+      // Remove default chevron
+      > div:last-child {
+        display: none;
+      }
+    }
+
+    &__content {
+      padding: calc(var(--st-unit-2) + 1px) 0;
+
+      &__item {
+        padding: var(--st-unit-3) var(--st-unit-4-5);
+
+        & > button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

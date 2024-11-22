@@ -1,0 +1,74 @@
+@use '@shared/styles/mixins.module.scss' as mixins;
+
+.search-bar {
+  @include mixins.search-bar-full-height;
+  @include mixins.search-bar-no-narrow-search;
+}
+
+.outbound-matrix {
+  gap: var(--st-unit-10);
+  padding: var(--st-unit-6);
+
+  &__title-section{
+    border-bottom:  1px solid var(--st-color-gray-300);
+  }
+
+  &__container{
+    min-width: calc((var(--st-unit-25) * 15));
+  }
+
+  &__row {
+    gap: var(--st-unit-4);
+
+    &--drag-item {
+      width: 100%;
+    }
+
+    &--dragging {
+      border: 1px dashed var(--st-color-blue-700);
+      border-radius: calc(var(--st-unit-1) - 1px);
+      min-height: var(--st-unit-20);
+      box-sizing: border-box;
+    }
+  }
+}
+
+.dropdown {
+  border-radius: var(--st-unit-1);
+  border: 1px solid var(--st-color-gray-700);
+  background: var(--st-color-gray-50);
+  width: calc((var(--st-unit-20) * 4) + 4px);
+
+  &__switch {
+    gap: var(--st-unit-4);
+
+    &--label {
+      flex: 1;
+    }
+  }
+
+  &__button {
+    height: var(--st-unit-13);
+    cursor: pointer;
+  }
+}
+
+.overview {
+  width: calc(var(--st-unit-30) * 2);
+  background: var(--st-color-gray-50);
+  box-shadow: var(--st-shadow-8dp);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  &__modal {
+    padding: var(--st-unit-6);
+
+    [class*="_--variant-display-5"] {
+      font-size: var(--st-font-size-175);
+      font-style: normal;
+      font-weight: bold;
+      line-height: var(--st-unit-8);
+    }
+  }
+}

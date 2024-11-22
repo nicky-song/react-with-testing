@@ -1,0 +1,80 @@
+.remove-po-modal {
+  div[class*='_content_'] {
+    padding: var(--st-unit-6);
+  }
+
+  &[class*='_--size-auto_'] {
+    width: calc(var(--st-unit-23) * 6);
+  }
+
+  &__form-wrapper {
+    gap: var(--st-unit-6);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    & * {
+      margin: 0;
+    }
+
+    & > *:first-child {
+      max-width: calc(100% - var(--st-unit-13));
+    }
+
+    &__close-button.close-icon {
+      padding: 0;
+      min-width: 0;
+      width: var(--st-unit-8);
+      height: var(--st-unit-8);
+      border-radius: 100%;
+    }
+  }
+
+  &__body {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &__section {
+      gap: var(--st-unit-4);
+
+      &__item {
+        gap: var(--st-unit-2);
+      }
+    }
+
+    &__form-field {
+      &-label--required {
+        line-height: calc(var(--st-unit-6) - 2);
+        
+        &::after {
+          content: "*";
+          color: var(--st-color-error);
+          font-size: var(--st-unit-4);
+          font-weight: bold;
+          margin-left: var(--st-unit-1);
+        }
+      }
+
+      &-error-messages {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+
+        & span {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+
+    &__actions{
+      gap: var(--st-unit-4);
+    }
+  }
+}

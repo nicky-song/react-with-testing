@@ -1,0 +1,14 @@
+.po-suggestion {
+    padding: var(--st-unit-2) calc(var(--st-unit-4-5) + 1.2px);
+    cursor: pointer;
+
+    &__container {
+        padding: var(--st-unit-1) 0;
+        gap: calc(var(--st-unit-1));
+    }
+
+    &--active,
+    &:hover {
+        background-color: var(--st-color-gray-100);
+    }
+}
